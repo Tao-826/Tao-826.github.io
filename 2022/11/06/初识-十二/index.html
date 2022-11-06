@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>初识(十二) | Hexo</title>
+  <meta name="description" content="uni-app1. 开发工具1.1 安装 scss&#x2F;sass 编译https:&#x2F;&#x2F;ext.dcloud.net.cn&#x2F;plugin?name&#x3D;compile-node-sass 进入插件下载页面之后，点击使用 HBuilderX 导入插件 按钮进行自动安装 1.2 快捷键方案切换操作步骤：工具 -&gt; 预设快捷键方案切换 -&gt; VS 代码 1.3 修改编辑器的基本设置操作步骤：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识(十二)">
+<meta property="og:url" content="http://example.com/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%BA%8C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="uni-app1. 开发工具1.1 安装 scss&#x2F;sass 编译https:&#x2F;&#x2F;ext.dcloud.net.cn&#x2F;plugin?name&#x3D;compile-node-sass 进入插件下载页面之后，点击使用 HBuilderX 导入插件 按钮进行自动安装 1.2 快捷键方案切换操作步骤：工具 -&gt; 预设快捷键方案切换 -&gt; VS 代码 1.3 修改编辑器的基本设置操作步骤：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.escook.cn/docs-uni-shop/assets/img/2-2.e5e761c8.png">
+<meta property="og:image" content="https://www.escook.cn/docs-uni-shop/assets/img/2-3.de0b01ae.png">
+<meta property="article:published_time" content="2022-11-06T03:53:36.000Z">
+<meta property="article:modified_time" content="2022-11-06T03:56:44.889Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="uni-app">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.escook.cn/docs-uni-shop/assets/img/2-2.e5e761c8.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%BA%8C/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/portrait.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">十七</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">前端开发工程师</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> hunan, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a><span class="category-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/" rel="tag">Vuex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Api/" rel="tag">Web Api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/" rel="tag">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uni-app/" rel="tag">uni-app</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 13px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/Node/" style="font-size: 13px;">Node</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 13px;">Vuex</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">Vue基础</a> <a href="/tags/Web-Api/" style="font-size: 13px;">Web Api</a> <a href="/tags/Webpack/" style="font-size: 13px;">Webpack</a> <a href="/tags/jQuery/" style="font-size: 13px;">jQuery</a> <a href="/tags/uni-app/" style="font-size: 13px;">uni-app</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 13px;">微信小程序</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%BA%8C/" class="title">初识(十二)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:53:36.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%B8%80/" class="title">初识(十一)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:53:29.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81/" class="title">初识(十)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:51:31.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E4%B9%9D/" class="title">初识(九)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:51:22.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%85%AB/" class="title">初识(八)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:49:12.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-初识-十二" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初识(十二)
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%BA%8C/" class="article-date">
+	  <time datetime="2022-11-06T03:53:36.000Z" itemprop="datePublished">2022-11-06</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/uni-app/" rel="tag">uni-app</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%BA%8C/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h2><h3 id="1-开发工具"><a href="#1-开发工具" class="headerlink" title="1. 开发工具"></a>1. 开发工具</h3><h4 id="1-1-安装-scss-x2F-sass-编译"><a href="#1-1-安装-scss-x2F-sass-编译" class="headerlink" title="1.1 安装 scss&#x2F;sass 编译"></a>1.1 安装 scss&#x2F;sass 编译</h4><p><a target="_blank" rel="noopener" href="https://ext.dcloud.net.cn/plugin?name=compile-node-sass">https://ext.dcloud.net.cn/plugin?name=compile-node-sass</a></p>
+<p>进入插件下载页面之后，点击使用 HBuilderX 导入插件 按钮进行自动安装</p>
+<h4 id="1-2-快捷键方案切换"><a href="#1-2-快捷键方案切换" class="headerlink" title="1.2 快捷键方案切换"></a>1.2 快捷键方案切换</h4><p>操作步骤：工具 -&gt; 预设快捷键方案切换 -&gt; VS 代码</p>
+<h4 id="1-3-修改编辑器的基本设置"><a href="#1-3-修改编辑器的基本设置" class="headerlink" title="1.3 修改编辑器的基本设置"></a>1.3 修改编辑器的基本设置</h4><p>操作步骤：工具 -&gt; 设置 -&gt; 打开 Settings.json 按需进行配置 </p>
+<p><strong>源码视图</strong>下可用的参考配置：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;editor.colorScheme&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Default&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.fontSize&quot;</span><span class="punctuation">:</span> <span class="number">12</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.fontFamily&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Consolas&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.fontFmyCHS&quot;</span><span class="punctuation">:</span> <span class="string">&quot;微软雅黑 Light&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.insertSpaces&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.lineHeight&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.5&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.minimap.enabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.mouseWheelZoom&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.onlyHighlightWord&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.tabSize&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.wordWrap&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;explorer.iconTheme&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vs-seti&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.codeassist.px2rem.enabel&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;editor.codeassist.px2upx.enabel&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-目录结构"><a href="#1-4-目录结构" class="headerlink" title="1.4 目录结构"></a>1.4 目录结构</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">┌─components            uni-app组件目录</span><br><span class="line">│  └─comp-a.vue         可复用的a组件</span><br><span class="line">├─pages                 业务页面文件存放的目录</span><br><span class="line">│  ├─index</span><br><span class="line">│  │  └─index.vue       index页面</span><br><span class="line">│  └─list</span><br><span class="line">│     └─list.vue        list页面</span><br><span class="line">├─static                存放应用引用静态资源（如图片、视频等）的目录，注意：静态资源只能存放于此</span><br><span class="line">├─main.js               Vue初始化入口文件</span><br><span class="line">├─App.vue               应用配置，用来配置小程序的全局样式、生命周期函数等</span><br><span class="line">├─manifest.json         配置应用名称、appid、logo、版本等打包信息</span><br><span class="line">└─pages.json            配置页面路径、页面窗口样式、tabBar、navigationBar 等页面类信息</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-5-把项目运行到微信开发者工具"><a href="#1-5-把项目运行到微信开发者工具" class="headerlink" title="1.5 把项目运行到微信开发者工具"></a>1.5 把项目运行到微信开发者工具</h4><p>在 manifestjson -&gt;微信小程序配置 -&gt; 填写自己的微信小程序的 AppID</p>
+<p>在 HBuilderX 中 -&gt;工具 -&gt;设置 -&gt;运行配置 -&gt;配置“微信开发者工具”的<strong>安装路径</strong></p>
+<p>在微信开发者工具中，通过 面板，开启”微信开发者工具”的<strong>服务端口</strong></p>
+<p>在 HBuilderX 中，点击菜单栏中的 ，将当前 uni-app 项目编译之后，自动运行到微信开发者工具中，从而方便查看项目效果与调试，运行 -&gt; 运行到小程序模拟器 -&gt; 微信开发者工具</p>
+<h4 id="1-6-使用-Git-管理项目"><a href="#1-6-使用-Git-管理项目" class="headerlink" title="1.6  使用 Git 管理项目"></a>1.6  使用 Git 管理项目</h4><p>1.在项目根目录中新建 忽略文件，并配置如下：<code>.gitignore</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 忽略 node_modules 目录</span><br><span class="line">/node_modules</span><br><span class="line">/unpackage/dist</span><br></pre></td></tr></table></figure>
+
+<p>为了让 Git 能够正常追踪 unpackage 目录，按照惯例，我们可以在 unpackage 目录下创建一个叫做 的文件进行占位<code>.gitkeep</code></p>
+<p>2.打开终端，切换到项目根目录中，运行如下的命令，初始化本地 Git 仓库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>3.将所有文件都加入到暂存区：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<p>4.本地提交更新：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;init project&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-标签栏"><a href="#2-标签栏" class="headerlink" title="2. 标签栏"></a>2. 标签栏</h3><h4 id="2-1-创建-tabBar-分支"><a href="#2-1-创建-tabBar-分支" class="headerlink" title="2.1 创建 tabBar 分支"></a>2.1 创建 tabBar 分支</h4><p>运行如下的命令，基于 master 分支在本地创建 tabBar 子分支，用来开发和 tabBar 相关的功能：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 创建分支</span><br><span class="line">git checkout -b tabbar</span><br><span class="line">// 查看分支</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-创建-选项卡栏-页面"><a href="#2-2-创建-选项卡栏-页面" class="headerlink" title="2.2 创建 选项卡栏 页面"></a>2.2 创建 选项卡栏 页面</h4><p>在 目录中，创建首页（home）、分类（cate）、购物车（cart）、我的（my） 这 4 个 tabBar 页面。在 HBuilderX 中，可以通过如下的两个步骤，快速新建页面：<code>pages</code></p>
+<ol>
+<li>在 目录上鼠标右键，选择<strong>新建页面</strong><code>pages</code></li>
+<li>在弹出的窗口中，填写<strong>页面的名称</strong>、<strong>勾选 scss 模板</strong>之后，点击创建按钮。</li>
+</ol>
+<h4 id="2-3-配置-tabBar-效果"><a href="#2-3-配置-tabBar-效果" class="headerlink" title="2.3 配置 tabBar 效果"></a>2.3 配置 tabBar 效果</h4><p>修改项目根目录中的 <code>pages.json</code> 配置文件，新增 <code>tabBar</code> 的配置节点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;tabBar&quot;: &#123;</span><br><span class="line">    &quot;selectedColor&quot;: &quot;#C00000&quot;,</span><br><span class="line">    &quot;list&quot;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;pagePath&quot;: &quot;pages/home/home&quot;,</span><br><span class="line">        &quot;text&quot;: &quot;首页&quot;,</span><br><span class="line">        &quot;iconPath&quot;: &quot;static/tab_icons/home.png&quot;,</span><br><span class="line">        &quot;selectedIconPath&quot;: &quot;static/tab_icons/home-active.png&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;pagePath&quot;: &quot;pages/cate/cate&quot;,</span><br><span class="line">        &quot;text&quot;: &quot;分类&quot;,</span><br><span class="line">        &quot;iconPath&quot;: &quot;static/tab_icons/cate.png&quot;,</span><br><span class="line">        &quot;selectedIconPath&quot;: &quot;static/tab_icons/cate-active.png&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;pagePath&quot;: &quot;pages/cart/cart&quot;,</span><br><span class="line">        &quot;text&quot;: &quot;购物车&quot;,</span><br><span class="line">        &quot;iconPath&quot;: &quot;static/tab_icons/cart.png&quot;,</span><br><span class="line">        &quot;selectedIconPath&quot;: &quot;static/tab_icons/cart-active.png&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;pagePath&quot;: &quot;pages/my/my&quot;,</span><br><span class="line">        &quot;text&quot;: &quot;我的&quot;,</span><br><span class="line">        &quot;iconPath&quot;: &quot;static/tab_icons/my.png&quot;,</span><br><span class="line">        &quot;selectedIconPath&quot;: &quot;static/tab_icons/my-active.png&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-删除默认的-index-首页"><a href="#2-4-删除默认的-index-首页" class="headerlink" title="2.4 删除默认的 index 首页"></a>2.4 删除默认的 index 首页</h4><ol>
+<li>在 HBuilderX 中，把 <code>pages</code> 目录下的 <code>index首页文件夹</code> 删除掉</li>
+<li>同时，把 <code>page.json</code> 中记录的 <code>index 首页</code> 路径删除掉</li>
+<li>为了防止小程序运行失败，在微信开发者工具中，手动删除 <code>pages</code> 目录下的 <code>index 首页文件夹</code></li>
+<li>同时，把 <code>components</code> 目录下的 <code>uni-link 组件文件夹</code> 删除掉</li>
+</ol>
+<h4 id="2-5-修改导航条的样式效果"><a href="#2-5-修改导航条的样式效果" class="headerlink" title="2.5 修改导航条的样式效果"></a>2.5 修改导航条的样式效果</h4><ol>
+<li><p>打开 <code>pages.json</code> 这个全局的配置文件</p>
+</li>
+<li><p>修改 <code>globalStyle</code> 节点如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;globalStyle&quot;: &#123;</span><br><span class="line">    &quot;navigationBarTextStyle&quot;: &quot;white&quot;,</span><br><span class="line">    &quot;navigationBarTitleText&quot;: &quot;黑马优购&quot;,</span><br><span class="line">    &quot;navigationBarBackgroundColor&quot;: &quot;#C00000&quot;,</span><br><span class="line">    &quot;backgroundColor&quot;: &quot;#FFFFFF&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="2-6-分支的提交与合并"><a href="#2-6-分支的提交与合并" class="headerlink" title="2.6 分支的提交与合并"></a>2.6 分支的提交与合并</h4><ol>
+<li>将本地的 tabbar 分支进行本地的 commit 提交：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;完成了 tabBar 的开发&quot;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>将本地的 tabbar 分支推送到远程仓库进行保存：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin tabbar</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>将本地的 tabbar 分支合并到本地的 master 分支：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge tabbar</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>删除本地的 tabbar 分支：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d tabbar</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-首页"><a href="#3-首页" class="headerlink" title="3. 首页"></a>3. 首页</h3><h4 id="3-0-创建-home-分支"><a href="#3-0-创建-home-分支" class="headerlink" title="3.0 创建 home 分支"></a>3.0 创建 home 分支</h4><p>运行如下的命令，基于 master 分支在本地创建 home 子分支，用来开发和 home 首页相关的功能：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b home</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-1-配置网络请求"><a href="#3-1-配置网络请求" class="headerlink" title="3.1 配置网络请求"></a>3.1 配置网络请求</h4><p>由于平台的限制，小程序项目中<strong>不支持 axios</strong>，而且原生的 <code>wx.request()</code> API 功能较为简单，<strong>不支持拦截器</strong>等全局定制的功能。因此，建议在 uni-app 项目中使用 <code>@escook/request-miniprogram</code> 第三方包发起网络数据请求。</p>
+<blockquote>
+<p>请参考 <strong>@escook&#x2F;request-miniprogram</strong> 的官方文档进行安装、配置、使用</p>
+</blockquote>
+<blockquote>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@escook/request-miniprogram">https://www.npmjs.com/package/@escook/request-miniprogram</a></p>
+</blockquote>
+<p>最终，在项目的 <code>main.js</code> 入口文件中，通过如下的方式进行配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import &#123; $http &#125; from &#x27;@escook/request-miniprogram&#x27;</span><br><span class="line"></span><br><span class="line">uni.$http = $http</span><br><span class="line">// 配置请求根路径</span><br><span class="line">$http.baseUrl = &#x27;https://www.uinav.com&#x27;</span><br><span class="line"></span><br><span class="line">// 请求开始之前做一些事情</span><br><span class="line">$http.beforeRequest = function (options) &#123;</span><br><span class="line">  uni.showLoading(&#123;</span><br><span class="line">    title: &#x27;数据加载中...&#x27;,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 请求完成之后做一些事情</span><br><span class="line">$http.afterRequest = function () &#123;</span><br><span class="line">  uni.hideLoading()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-轮播图区域"><a href="#3-2-轮播图区域" class="headerlink" title="3.2 轮播图区域"></a>3.2 轮播图区域</h4><h5 id="3-2-1-请求轮播图的数据"><a href="#3-2-1-请求轮播图的数据" class="headerlink" title="3.2.1 请求轮播图的数据"></a>3.2.1 请求轮播图的数据</h5><p>实现步骤：</p>
+<ol>
+<li>在 data 中定义轮播图的数组</li>
+<li>在 onLoad 生命周期函数中调用获取轮播图数据的方法</li>
+<li>在 methods 中定义获取轮播图数据的方法</li>
+</ol>
+<p>示例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      // 1. 轮播图的数据列表，默认为空数组</span><br><span class="line">      swiperList: [],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad() &#123;</span><br><span class="line">    // 2. 在小程序页面刚加载的时候，调用获取轮播图数据的方法</span><br><span class="line">    this.getSwiperList()</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    // 3. 获取轮播图数据的方法</span><br><span class="line">    async getSwiperList() &#123;</span><br><span class="line">      // 3.1 发起请求</span><br><span class="line">      const &#123; data: res &#125; = await uni.$http.get(&#x27;/api/public/v1/home/swiperdata&#x27;)</span><br><span class="line">      // 3.2 请求失败</span><br><span class="line">      if (res.meta.status !== 200) &#123;</span><br><span class="line">        return uni.showToast(&#123;</span><br><span class="line">          title: &#x27;数据请求失败！&#x27;,</span><br><span class="line">          duration: 1500,</span><br><span class="line">          icon: &#x27;none&#x27;,</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">      // 3.3 请求成功，为 data 中的数据赋值</span><br><span class="line">      this.swiperList = res.message</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-2-2-渲染轮播图的-UI-结构"><a href="#3-2-2-渲染轮播图的-UI-结构" class="headerlink" title="3.2.2 渲染轮播图的 UI 结构"></a>3.2.2 渲染轮播图的 UI 结构</h5><ol>
+<li><p>渲染 UI 结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;!-- 轮播图区域 --&gt;</span><br><span class="line">    &lt;swiper :indicator-dots=&quot;true&quot; :autoplay=&quot;true&quot; :interval=&quot;3000&quot; :duration=&quot;1000&quot; :circular=&quot;true&quot;&gt;</span><br><span class="line">      &lt;!-- 循环渲染轮播图的 item 项 --&gt;</span><br><span class="line">      &lt;swiper-item v-for=&quot;(item, i) in swiperList&quot; :key=&quot;i&quot;&gt;</span><br><span class="line">        &lt;view class=&quot;swiper-item&quot;&gt;</span><br><span class="line">          &lt;!-- 动态绑定图片的 src 属性 --&gt;</span><br><span class="line">          &lt;image :src=&quot;item.image_src&quot;&gt;&lt;/image&gt;</span><br><span class="line">        &lt;/view&gt;</span><br><span class="line">      &lt;/swiper-item&gt;</span><br><span class="line">    &lt;/swiper&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>美化 UI 结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang=&quot;scss&quot;&gt;</span><br><span class="line">swiper &#123;</span><br><span class="line"> height: 330rpx;</span><br><span class="line"></span><br><span class="line"> .swiper-item,</span><br><span class="line"> image &#123;</span><br><span class="line">   width: 100%;</span><br><span class="line">   height: 100%;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="3-2-3-配置小程序分包"><a href="#3-2-3-配置小程序分包" class="headerlink" title="3.2.3 配置小程序分包"></a>3.2.3 配置小程序分包</h5><blockquote>
+<p>分包可以减少小程序首次启动时的加载时间</p>
+</blockquote>
+<p>为此，我们在项目中，把 tabBar 相关的 4 个页面放到主包中，其它页面（例如：商品详情页、商品列表页）放到分包中。在 uni-app 项目中，配置分包的步骤如下：</p>
+<ol>
+<li><p>在项目根目录中，创建分包的根目录，命名为 <code>subpkg</code></p>
+</li>
+<li><p>在 <code>pages.json</code> 中，和 <code>pages</code> 节点平级的位置声明 <code>subPackages</code> 节点，用来定义分包相关的结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;pages&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;path&quot;: &quot;pages/home/home&quot;,</span><br><span class="line">      &quot;style&quot;: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;path&quot;: &quot;pages/cate/cate&quot;,</span><br><span class="line">      &quot;style&quot;: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;path&quot;: &quot;pages/cart/cart&quot;,</span><br><span class="line">      &quot;style&quot;: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;path&quot;: &quot;pages/my/my&quot;,</span><br><span class="line">      &quot;style&quot;: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;subPackages&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;root&quot;: &quot;subpkg&quot;,</span><br><span class="line">      &quot;pages&quot;: []</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 <code>subpkg</code> 目录上鼠标右键，点击 <code>新建页面</code> 选项，并填写页面的相关信息：</p>
+<p><img src="https://www.escook.cn/docs-uni-shop/assets/img/2-2.e5e761c8.png" alt="img"></p>
+</li>
+</ol>
+<h5 id="3-2-4-点击轮播图跳转到商品详情页面"><a href="#3-2-4-点击轮播图跳转到商品详情页面" class="headerlink" title="3.2.4 点击轮播图跳转到商品详情页面"></a>3.2.4 点击轮播图跳转到商品详情页面</h5><p>将 &#96;&#96; 节点内的 <code>view</code> 组件，改造为 <code>navigator</code> 导航组件，并动态绑定 <code>url 属性</code> 的值。</p>
+<ol>
+<li><p>改造之前的 UI 结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;swiper-item v-for=&quot;(item, i) in swiperList&quot; :key=&quot;i&quot;&gt;</span><br><span class="line">  &lt;view class=&quot;swiper-item&quot;&gt;</span><br><span class="line">    &lt;!-- 动态绑定图片的 src 属性 --&gt;</span><br><span class="line">    &lt;image :src=&quot;item.image_src&quot;&gt;&lt;/image&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/swiper-item&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>改造之后的 UI 结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;swiper-item v-for=&quot;(item, i) in swiperList&quot; :key=&quot;i&quot;&gt;</span><br><span class="line">    &lt;navigator class=&quot;swiper-item&quot; :url=&quot;&#x27;/subpkg/goods_detail/goods_detail?goods_id=&#x27; + item.goods_id&quot;&gt;</span><br><span class="line">      &lt;!-- 动态绑定图片的 src 属性 --&gt;</span><br><span class="line">      &lt;image :src=&quot;item.image_src&quot;&gt;&lt;/image&gt;</span><br><span class="line">    &lt;/navigator&gt;</span><br><span class="line">&lt;/swiper-item&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="3-2-5-封装-uni-showMsg-方法"><a href="#3-2-5-封装-uni-showMsg-方法" class="headerlink" title="3.2.5 封装 uni.$showMsg() 方法"></a>3.2.5 封装 uni.$showMsg() 方法</h5><p>当数据请求失败之后，经常需要调用 <code>uni.showToast(&#123; /* 配置对象 */ &#125;)</code> 方法来提示用户。此时，可以在全局封装一个 <code>uni.$showMsg()</code> 方法，来简化 <code>uni.showToast()</code> 方法的调用。具体的改造步骤如下：</p>
+<ol>
+<li><p>在 <code>main.js</code> 中，为 <code>uni</code> 对象挂载自定义的 <code>$showMsg()</code> 方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 封装的展示消息提示的方法</span><br><span class="line">uni.$showMsg = function (title = &#x27;数据加载失败！&#x27;, duration = 1500) &#123;</span><br><span class="line">  uni.showToast(&#123;</span><br><span class="line">    title,</span><br><span class="line">    duration,</span><br><span class="line">    icon: &#x27;none&#x27;,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>今后，在需要提示消息的时候，直接调用 <code>uni.$showMsg()</code> 方法即可：</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">async getSwiperList() &#123;</span><br><span class="line">   const &#123; data: res &#125; = await uni.$http.get(&#x27;/api/public/v1/home/swiperdata&#x27;)</span><br><span class="line">   if (res.meta.status !== 200) return uni.$showMsg()</span><br><span class="line">   this.swiperList = res.message</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-分类导航区域"><a href="#3-3-分类导航区域" class="headerlink" title="3.3 分类导航区域"></a>3.3 分类导航区域</h4><h5 id="3-3-1-获取分类导航的数据"><a href="#3-3-1-获取分类导航的数据" class="headerlink" title="3.3.1 获取分类导航的数据"></a>3.3.1 获取分类导航的数据</h5><p>实现思路：</p>
+<ol>
+<li>定义 data 数据</li>
+<li>在 onLoad 中调用获取数据的方法</li>
+<li>在 methods 中定义获取数据的方法</li>
+</ol>
+<p>示例代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      // 1. 分类导航的数据列表</span><br><span class="line">      navList: [],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad() &#123;</span><br><span class="line">    // 2. 在 onLoad 中调用获取数据的方法</span><br><span class="line">    this.getNavList()</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    // 3. 在 methods 中定义获取数据的方法</span><br><span class="line">    async getNavList() &#123;</span><br><span class="line">      const &#123; data: res &#125; = await uni.$http.get(&#x27;/api/public/v1/home/catitems&#x27;)</span><br><span class="line">      if (res.meta.status !== 200) return uni.$showMsg()</span><br><span class="line">      this.navList = res.message</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-3-2-渲染分类导航的-UI-结构"><a href="#3-3-2-渲染分类导航的-UI-结构" class="headerlink" title="3.3.2 渲染分类导航的 UI 结构"></a>3.3.2 渲染分类导航的 UI 结构</h5><ol>
+<li><p>定义如下的 UI 结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 分类导航区域 --&gt;</span><br><span class="line">&lt;view class=&quot;nav-list&quot;&gt;</span><br><span class="line">   &lt;view class=&quot;nav-item&quot; v-for=&quot;(item, i) in navList&quot; :key=&quot;i&quot;&gt;</span><br><span class="line">     &lt;image :src=&quot;item.image_src&quot; class=&quot;nav-img&quot;&gt;&lt;/image&gt;</span><br><span class="line">   &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过如下的样式美化页面结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.nav-list &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: space-around;</span><br><span class="line">  margin: 15px 0;</span><br><span class="line"></span><br><span class="line">  .nav-img &#123;</span><br><span class="line">    width: 128rpx;</span><br><span class="line">    height: 140rpx;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="3-3-2-点击第一项，切换到分类页面"><a href="#3-3-2-点击第一项，切换到分类页面" class="headerlink" title="3.3.2 点击第一项，切换到分类页面"></a>3.3.2 点击第一项，切换到分类页面</h5><ol>
+<li><p>为 <code>nav-item</code> 绑定点击事件处理函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 分类导航区域 --&gt;</span><br><span class="line">&lt;view class=&quot;nav-list&quot;&gt;</span><br><span class="line">  &lt;view class=&quot;nav-item&quot; v-for=&quot;(item, i) in navList&quot; :key=&quot;i&quot; @click=&quot;navClickHandler(item)&quot;&gt;</span><br><span class="line">    &lt;image :src=&quot;item.image_src&quot; class=&quot;nav-img&quot;&gt;&lt;/image&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义 <code>navClickHandler</code> 事件处理函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// nav-item 项被点击时候的事件处理函数</span><br><span class="line">navClickHandler(item) &#123;</span><br><span class="line">  // 判断点击的是哪个 nav</span><br><span class="line">  if (item.name === &#x27;分类&#x27;) &#123;</span><br><span class="line">    uni.switchTab(&#123;</span><br><span class="line">      url: &#x27;/pages/cate/cate&#x27;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="3-4-楼层区域"><a href="#3-4-楼层区域" class="headerlink" title="3.4 楼层区域"></a>3.4 楼层区域</h4><h5 id="3-4-1-获取楼层数据"><a href="#3-4-1-获取楼层数据" class="headerlink" title="3.4.1 获取楼层数据"></a>3.4.1 获取楼层数据</h5><p>实现思路：</p>
+<ol>
+<li>定义 data 数据</li>
+<li>在 onLoad 中调用获取数据的方法</li>
+<li>在 methods 中定义获取数据的方法</li>
+</ol>
+<p>示例代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      // 1. 楼层的数据列表</span><br><span class="line">      floorList: [],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad() &#123;</span><br><span class="line">    // 2. 在 onLoad 中调用获取楼层数据的方法</span><br><span class="line">    this.getFloorList()</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    // 3. 定义获取楼层列表数据的方法</span><br><span class="line">    async getFloorList() &#123;</span><br><span class="line">      const &#123; data: res &#125; = await uni.$http.get(&#x27;/api/public/v1/home/floordata&#x27;)</span><br><span class="line">      if (res.meta.status !== 200) return uni.$showMsg()</span><br><span class="line">      this.floorList = res.message</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-4-2-渲染楼层的标题"><a href="#3-4-2-渲染楼层的标题" class="headerlink" title="3.4.2 渲染楼层的标题"></a>3.4.2 渲染楼层的标题</h5><ol>
+<li><p>定义如下的 UI 结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 楼层区域 --&gt;</span><br><span class="line">&lt;view class=&quot;floor-list&quot;&gt;</span><br><span class="line">  &lt;!-- 楼层 item 项 --&gt;</span><br><span class="line">  &lt;view class=&quot;floor-item&quot; v-for=&quot;(item, i) in floorList&quot; :key=&quot;i&quot;&gt;</span><br><span class="line">    &lt;!-- 楼层标题 --&gt;</span><br><span class="line">    &lt;image :src=&quot;item.floor_title.image_src&quot; class=&quot;floor-title&quot;&gt;&lt;/image&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>美化楼层标题的样式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.floor-title &#123;</span><br><span class="line">  height: 60rpx;</span><br><span class="line">  width: 100%;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="3-4-3-渲染楼层里的图片"><a href="#3-4-3-渲染楼层里的图片" class="headerlink" title="3.4.3 渲染楼层里的图片"></a>3.4.3 渲染楼层里的图片</h5><ol>
+<li><p>定义楼层图片区域的 UI 结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 楼层图片区域 --&gt;</span><br><span class="line">&lt;view class=&quot;floor-img-box&quot;&gt;</span><br><span class="line">  &lt;!-- 左侧大图片的盒子 --&gt;</span><br><span class="line">  &lt;view class=&quot;left-img-box&quot;&gt;</span><br><span class="line">    &lt;image :src=&quot;item.product_list[0].image_src&quot; :style=&quot;&#123;width: item.product_list[0].image_width + &#x27;rpx&#x27;&#125;&quot; mode=&quot;widthFix&quot;&gt;&lt;/image&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">  &lt;!-- 右侧 4 个小图片的盒子 --&gt;</span><br><span class="line">  &lt;view class=&quot;right-img-box&quot;&gt;</span><br><span class="line">    &lt;view class=&quot;right-img-item&quot; v-for=&quot;(item2, i2) in item.product_list&quot; :key=&quot;i2&quot; v-if=&quot;i2 !== 0&quot;&gt;</span><br><span class="line">      &lt;image :src=&quot;item2.image_src&quot; mode=&quot;widthFix&quot; :style=&quot;&#123;width: item2.image_width + &#x27;rpx&#x27;&#125;&quot;&gt;&lt;/image&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>美化楼层图片区域的样式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.right-img-box &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-wrap: wrap;</span><br><span class="line">  justify-content: space-around;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.floor-img-box &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  padding-left: 10rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="3-4-4-点击楼层图片跳转到商品列表页"><a href="#3-4-4-点击楼层图片跳转到商品列表页" class="headerlink" title="3.4.4 点击楼层图片跳转到商品列表页"></a>3.4.4 点击楼层图片跳转到商品列表页</h5><ol>
+<li><p>在 <code>subpkg</code> 分包中，新建 <code>goods_list</code> 页面</p>
+<p><img src="https://www.escook.cn/docs-uni-shop/assets/img/2-3.de0b01ae.png" alt="img"></p>
+</li>
+<li><p>楼层数据请求成功之后，通过双层 <code>forEach</code> 循环，处理 URL 地址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 获取楼层列表数据</span><br><span class="line">async getFloorList() &#123;</span><br><span class="line">  const &#123; data: res &#125; = await uni.$http.get(&#x27;/api/public/v1/home/floordata&#x27;)</span><br><span class="line">  if (res.meta.status !== 200) return uni.$showMsg()</span><br><span class="line"></span><br><span class="line">  // 通过双层 forEach 循环，处理 URL 地址</span><br><span class="line">  res.message.forEach(floor =&gt; &#123;</span><br><span class="line">    floor.product_list.forEach(prod =&gt; &#123;</span><br><span class="line">      prod.url = &#x27;/subpkg/goods_list/goods_list?&#x27; + prod.navigator_url.split(&#x27;?&#x27;)[1]</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  this.floorList = res.message</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把图片外层的 <code>view</code> 组件，改造为 <code>navigator</code> 组件，并动态绑定 <code>url 属性</code> 的值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 楼层图片区域 --&gt;</span><br><span class="line">&lt;view class=&quot;floor-img-box&quot;&gt;</span><br><span class="line">  &lt;!-- 左侧大图片的盒子 --&gt;</span><br><span class="line">  &lt;navigator class=&quot;left-img-box&quot; :url=&quot;item.product_list[0].url&quot;&gt;</span><br><span class="line">    &lt;image :src=&quot;item.product_list[0].image_src&quot; :style=&quot;&#123;width: item.product_list[0].image_width + &#x27;rpx&#x27;&#125;&quot; mode=&quot;widthFix&quot;&gt;&lt;/image&gt;</span><br><span class="line">  &lt;/navigator&gt;</span><br><span class="line">  &lt;!-- 右侧 4 个小图片的盒子 --&gt;</span><br><span class="line">  &lt;view class=&quot;right-img-box&quot;&gt;</span><br><span class="line">    &lt;navigator class=&quot;right-img-item&quot; v-for=&quot;(item2, i2) in item.product_list&quot; :key=&quot;i2&quot; v-if=&quot;i2 !== 0&quot; :url=&quot;item2.url&quot;&gt;</span><br><span class="line">      &lt;image :src=&quot;item2.image_src&quot; mode=&quot;widthFix&quot; :style=&quot;&#123;width: item2.image_width + &#x27;rpx&#x27;&#125;&quot;&gt;&lt;/image&gt;</span><br><span class="line">    &lt;/navigator&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="3-5-分支的合并与提交"><a href="#3-5-分支的合并与提交" class="headerlink" title="3.5 分支的合并与提交"></a>3.5 分支的合并与提交</h4><ol>
+<li><p>将本地的 home 分支进行本地的 commit 提交：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;完成了 home 首页的开发&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将本地的 home 分支推送到远程仓库进行保存：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin home</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将本地的 home 分支合并到本地的 master 分支：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge home</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除本地的 home 分支：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d home</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%BA%8C/" title="初识(十二)" target="_blank" rel="external">http://example.com/2022/11/06/初识-十二/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/portrait.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">十七</span><small class="ml-1x">前端开发工程师</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%B8%80/" title="初识(十一)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/zhifubao.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/weixin.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

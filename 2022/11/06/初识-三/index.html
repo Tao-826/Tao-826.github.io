@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>初识(三) | Hexo</title>
+  <meta name="description" content="web APIsweb APIs 作用：就是使用  js 去操作 html 和 浏览器 分类： DOM （文档对象模型  操作网页内容，可以开发网页内容特效和实现用户交互）， ​              BOM（浏览器对象模型） DOM对象： document  （它提供的属性和方法都是用来访问和操作网页内容的) 获取DOM对象根据CSS选择器来获取DOM元素：          ​     一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识(三)">
+<meta property="og:url" content="http://example.com/2022/11/06/%E5%88%9D%E8%AF%86-%E4%B8%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="web APIsweb APIs 作用：就是使用  js 去操作 html 和 浏览器 分类： DOM （文档对象模型  操作网页内容，可以开发网页内容特效和实现用户交互）， ​              BOM（浏览器对象模型） DOM对象： document  （它提供的属性和方法都是用来访问和操作网页内容的) 获取DOM对象根据CSS选择器来获取DOM元素：          ​     一">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-06T03:43:13.000Z">
+<meta property="article:modified_time" content="2022-11-06T03:54:56.310Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Web Api">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2022/11/06/%E5%88%9D%E8%AF%86-%E4%B8%89/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/portrait.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">十七</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">前端开发工程师</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> hunan, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a><span class="category-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/" rel="tag">Vuex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Api/" rel="tag">Web Api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/" rel="tag">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uni-app/" rel="tag">uni-app</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 13px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/Node/" style="font-size: 13px;">Node</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 13px;">Vuex</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">Vue基础</a> <a href="/tags/Web-Api/" style="font-size: 13px;">Web Api</a> <a href="/tags/Webpack/" style="font-size: 13px;">Webpack</a> <a href="/tags/jQuery/" style="font-size: 13px;">jQuery</a> <a href="/tags/uni-app/" style="font-size: 13px;">uni-app</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 13px;">微信小程序</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%BA%8C/" class="title">初识(十二)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:53:36.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81%E4%B8%80/" class="title">初识(十一)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:53:29.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%8D%81/" class="title">初识(十)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:51:31.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E4%B9%9D/" class="title">初识(九)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:51:22.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%85%AB/" class="title">初识(八)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-06T03:49:12.000Z" itemprop="datePublished">2022-11-06</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-初识-三" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初识(三)
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E4%B8%89/" class="article-date">
+	  <time datetime="2022-11-06T03:43:13.000Z" itemprop="datePublished">2022-11-06</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Web-Api/" rel="tag">Web Api</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E4%B8%89/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="web-APIs"><a href="#web-APIs" class="headerlink" title="web APIs"></a>web APIs</h1><p>web APIs <strong>作用：</strong>就是使用  js 去操作 html 和 浏览器</p>
+<p><strong>分类：</strong> DOM （<strong>文档对象模型</strong>  操作网页内容，可以开发网页内容特效和实现用户交互），</p>
+<p>​              BOM（浏览器对象模型）</p>
+<p><strong>DOM对象：</strong> document  （它提供的属性和方法都是用来访问和操作网页内容的)</p>
+<h3 id="获取DOM对象"><a href="#获取DOM对象" class="headerlink" title="获取DOM对象"></a>获取DOM对象</h3><p><strong>根据CSS选择器来获取DOM元素：</strong>         </p>
+<p>​     一：    选择匹配的第一个元素 ———<strong>能直接操作修改</strong></p>
+<p>语法： document.querySelector（’css选择器’）—-<em><strong>必须是字符串 而且必须加反引号</strong></em>      </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>参数：包含一个或多个有效的 css选择器 <strong>字符串</strong></p>
+</li>
+<li><p>返回值：css选择器匹配的 第一个元素，一个HTMLElement对象。如果没有匹配到，则返回null。</p>
+<p> 二： 选择匹配的多个元素———–**只能通过遍历的方式一次给里面的元素做修改 **</p>
+<p> 语法： document.querySelectorAll（’css选择器’）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lis = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.nav li&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p> 返回值：css选择器匹配的  <strong>NodeList  对象集合</strong>          </p>
+<p> 例如：document.querySelectorAll（’ul li’）    获取到的将是是一个伪数组</p>
+<p> <strong>伪元素：</strong>1.有长度有索引号的数组，但是没有pop（）  push（）等数组方法</p>
+<p> ​                2.想要得到里面的每一个对象，则需要遍历（for）的方式获得。</p>
+<p> <strong>注意事项：</strong> 哪怕只有一个元素，通过querySelectorAll（）获取过来的也是一个 伪数组，里面只有一个元素而已</p>
+<p> <strong>其他三个获取DOM元素的方法（了解）</strong></p>
+<p> 1.根据<strong>id</strong>获取一个元素：document.getElementById(‘nav’)</p>
+<p> 2.根据标签获取<strong>一类</strong>（所有的）元素：document.getElementsByTagName(‘div’)</p>
+<p> 3.根据<strong>类名</strong>获取元素：document.getElementByClassName(‘w’)</p>
+<p> ​</p>
+<h2 id="操作元素内容"><a href="#操作元素内容" class="headerlink" title="操作元素内容"></a>操作元素内容</h2><p> <strong>一.元素innerText属性</strong>  </p>
+<p> 1.将文本内容添加&#x2F;更新到任意标签位置</p>
+<p> 2.显示纯文本，不解析标签</p>
+<p> <strong>二.元素 .innerHTML属性</strong> （推荐使用）</p>
+<p> 1.将文本内容添加&#x2F;更新到任意标签位置</p>
+<p> 2.会解析标签，能识别文本，多标签建议使用模板字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 获取元素</span></span><br><span class="line">   <span class="keyword">const</span> box = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.box&#x27;</span>)</span><br><span class="line">   <span class="comment">// 2. 修改文字内容  对象.innerText 属性</span></span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(box.<span class="property">innerText</span>)  <span class="comment">// 获取文字内容</span></span><br><span class="line">   box.<span class="property">innerText</span> = <span class="string">&#x27;我是一个盒子&#x27;</span>  <span class="comment">// 修改文字内容</span></span><br><span class="line">   box.<span class="property">innerText</span> = <span class="string">&#x27;&lt;strong&gt;我是一个盒子&lt;/strong&gt;&#x27;</span>  <span class="comment">// 不解析标签</span></span><br><span class="line">   <span class="comment">// 3. innerHTML 解析标签</span></span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(box.<span class="property">innerHTML</span>)</span><br><span class="line">   box.<span class="property">innerHTML</span> = <span class="string">&#x27;我要更换&#x27;</span></span><br><span class="line">   box.<span class="property">innerHTML</span> = <span class="string">&#x27;&lt;strong&gt;我要加粗的&lt;/strong&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p> ​</p>
+<h2 id="操作元素属性"><a href="#操作元素属性" class="headerlink" title="操作元素属性"></a>操作元素属性</h2><p> <strong>一. 操作元素 常用 属性     语法：对象.属性 &#x3D; 值</strong></p>
+<p> 常见的属性比如：href    title   src 等</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./images/1.webp&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 1. 获取图片元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> img = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;img&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 2. 修改图片对象的属性   对象.属性 = 值</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    img.<span class="property">src</span> = <span class="string">&#x27;./images/2.webp&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    img.<span class="property">title</span> = <span class="string">&#x27;pink老师的艺术照&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p> <strong>二.操作元素的 样式 属性</strong></p>
+</li>
+</ol>
+<p>1.通过  style  属性操作css     <em>语法：对象.style.样式属性 &#x3D; 值</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 1. 获取元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> box = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.box&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">//2. 修改样式属性 对象.style.样式属性 = &#x27;值&#x27;  别忘了跟单位</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box.<span class="property">style</span>.<span class="property">width</span> = <span class="string">&#x27;300px&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 多组单词的采取 小驼峰命名法</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="string">&#x27;hotpink&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box.<span class="property">style</span>.<span class="property">border</span> = <span class="string">&#x27;2px solid blue&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box.<span class="property">style</span>.<span class="property">borderTop</span> = <span class="string">&#x27;2px solid red&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.操作 类名（className）操作css   *语法： 元素.className &#x3D; ‘active’（active是一个css类名）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span>123<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 1. 获取元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 2.添加类名  class 是个关键字 我们用 className</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    div.<span class="property">className</span> = <span class="string">&#x27;nav box&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3.通过  classList  操作控制css</p>
+<p>3.1  <strong>追加</strong>一个类：  元素.classList.add(‘类名’)</p>
+<p>3.2    <strong>删除</strong>一个类：  元素.classList.remove(‘类名’)</p>
+<p>3.3   <strong>切换</strong>一个类：  元素.classList.toggle(‘类名’)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box active&quot;</span>&gt;</span>文字<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 通过classList添加</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 1. 获取元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> box = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.box&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 2. 修改样式</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 2.1 追加类 add() 类名不加点，并且是字符串</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 2.2 删除类  remove() 类名不加点，并且是字符串</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;box&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 2.3 切换类  toggle()  有还是没有啊， 有就删掉，没有就加上</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    box.<span class="property">classList</span>.<span class="title function_">toggle</span>(<span class="string">&#x27;active&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>三.操作 表单元素 属性</strong>   </p>
+<p>获取：DOM对象.属性名                              比如：表单.value &#x3D; ‘用户名’</p>
+<p>设置：DOM对象.属性名 &#x3D; 新值                              表单.type &#x3D; ‘password’</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;!-- <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span>=<span class="string">&quot;电脑&quot;</span>&gt;</span> --&gt;</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 1 获取元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> uname = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 2. 获取值  获取表单里面的值 用的  表单.value</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(uname.<span class="property">value</span>) <span class="comment">// 电脑</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(uname.<span class="property">innerHTML</span>)  innertHTML 得不到表单的内容</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 3. 设置表单的值</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    uname.<span class="property">value</span> = <span class="string">&#x27;我要买电脑&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(uname.<span class="property">type</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    uname.<span class="property">type</span> = <span class="string">&#x27;password&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 1. 获取</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> ipt = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(ipt.<span class="property">checked</span>)  <span class="comment">// false   只接受布尔值</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    ipt.<span class="property">checked</span> = <span class="literal">true</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// ipt.checked = &#x27;true&#x27;  // 会选中，不提倡  有隐式转换</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 1.获取</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> button = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// console.log(button.disabled)  // 默认false 不禁用</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    button.<span class="property">disabled</span> = <span class="literal">true</span>   <span class="comment">// 禁用按钮</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>四.自定义属性</strong></p>
+<p><em>标准属性：</em>标签天生自带的属性 比如class  id  title等，可以直接使用点语法操作 比如：disabled，checked，seleced</p>
+<p><em>自定义属性：</em>从html5中推出来了专门的**data-**自定义属性</p>
+<p>1.在标签上一律以  **data- **  开头</p>
+<p>2.在DOM对象上一律以   <strong>dataset</strong>   对象方式获取</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-id</span>=<span class="string">&quot;1&quot;</span> <span class="attr">data-spm</span>=<span class="string">&quot;不知道&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-id</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-id</span>=<span class="string">&quot;3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-id</span>=<span class="string">&quot;4&quot;</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-id</span>=<span class="string">&quot;5&quot;</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> one = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(one.<span class="property">dataset</span>.<span class="property">id</span>)  <span class="comment">// 1</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">console</span>.<span class="title function_">log</span>(one.<span class="property">dataset</span>.<span class="property">spm</span>)  <span class="comment">// 不知道</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="定时器-间歇函数"><a href="#定时器-间歇函数" class="headerlink" title="定时器-间歇函数"></a>定时器-间歇函数</h3><p>**定时器-间歇函数 **      目标：重复执行代码</p>
+<p><strong>1.开启定时器           语法：setInterval（函数，间隔时间）</strong></p>
+<p>​      作用：每间隔一段时间调用这个函数       &#x2F;       间隔的单位是毫秒</p>
+<p><em><strong><u>注意！！  调用函数不需要加括号  &#x2F;   定时器返回的是一个id数字</u></strong></em></p>
+<p>**2.关闭定时器           语法：let 变量名 &#x3D; setInterval(函数，间隔时间)     **</p>
+<p>​                                               <strong>clearInterval（变量名）</strong></p>
+<p>&#x2F;&#x2F; 一般不会刚创建就停止  二是满足一定条件再停止</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;一秒执行一次&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// setInterval(函数名, 间隔时间)  函数名不要加小括号</span></span><br><span class="line">    <span class="keyword">let</span> n = <span class="built_in">setInterval</span>(fn, <span class="number">1000</span>)</span><br><span class="line">    <span class="comment">// setInterval(&#x27;fn()&#x27;, 1000)</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(n)</span><br><span class="line">    <span class="comment">// 关闭定时器</span></span><br><span class="line">    <span class="built_in">clearInterval</span>(n)</span><br></pre></td></tr></table></figure>
+
+<p>***练习：用户倒计时协议案例     自动播放轮播图案例 ***</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;slider&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;slider-wrapper&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./images/slider01.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;slider-footer&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>对人类来说会不会太超前了？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;slider-indicator&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;active&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;toggle&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;prev&quot;</span>&gt;</span><span class="symbol">&amp;lt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;next&quot;</span>&gt;</span><span class="symbol">&amp;gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line">    <span class="comment">// 1. 初始数据</span></span><br><span class="line">    <span class="keyword">const</span> sliderData = [</span><br><span class="line">      &#123; <span class="attr">url</span>: <span class="string">&#x27;./images/slider01.jpg&#x27;</span>, <span class="attr">title</span>: <span class="string">&#x27;对人类来说会不会太超前了？&#x27;</span>, <span class="attr">color</span>: <span class="string">&#x27;rgb(100, 67, 68)&#x27;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">url</span>: <span class="string">&#x27;./images/slider02.jpg&#x27;</span>, <span class="attr">title</span>: <span class="string">&#x27;开启剑与雪的黑暗传说！&#x27;</span>, <span class="attr">color</span>: <span class="string">&#x27;rgb(43, 35, 26)&#x27;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">url</span>: <span class="string">&#x27;./images/slider03.jpg&#x27;</span>, <span class="attr">title</span>: <span class="string">&#x27;真正的jo厨出现了！&#x27;</span>, <span class="attr">color</span>: <span class="string">&#x27;rgb(36, 31, 33)&#x27;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">url</span>: <span class="string">&#x27;./images/slider04.jpg&#x27;</span>, <span class="attr">title</span>: <span class="string">&#x27;李玉刚：让世界通过B站看到东方大国文化&#x27;</span>, <span class="attr">color</span>: <span class="string">&#x27;rgb(139, 98, 66)&#x27;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">url</span>: <span class="string">&#x27;./images/slider05.jpg&#x27;</span>, <span class="attr">title</span>: <span class="string">&#x27;快来分享你的寒假日常吧~&#x27;</span>, <span class="attr">color</span>: <span class="string">&#x27;rgb(67, 90, 92)&#x27;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">url</span>: <span class="string">&#x27;./images/slider06.jpg&#x27;</span>, <span class="attr">title</span>: <span class="string">&#x27;哔哩哔哩小年YEAH&#x27;</span>, <span class="attr">color</span>: <span class="string">&#x27;rgb(166, 131, 143)&#x27;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">url</span>: <span class="string">&#x27;./images/slider07.jpg&#x27;</span>, <span class="attr">title</span>: <span class="string">&#x27;一站式解决你的电脑配置问题！！！&#x27;</span>, <span class="attr">color</span>: <span class="string">&#x27;rgb(53, 29, 25)&#x27;</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">url</span>: <span class="string">&#x27;./images/slider08.jpg&#x27;</span>, <span class="attr">title</span>: <span class="string">&#x27;谁不想和小猫咪贴贴呢！&#x27;</span>, <span class="attr">color</span>: <span class="string">&#x27;rgb(99, 72, 114)&#x27;</span> &#125;,</span><br><span class="line">    ]</span><br><span class="line">    <span class="comment">// 1.获取元素</span></span><br><span class="line">    <span class="keyword">const</span> img = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.slider-wrapper img&#x27;</span>)</span><br><span class="line">    <span class="keyword">const</span> p = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.slider-footer p&#x27;</span>)</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span> <span class="comment">//控制图片的张量</span></span><br><span class="line">    <span class="comment">// 开启定时器从第二张开始</span></span><br><span class="line">    <span class="comment">// console.log(sliderData[i])   //拿到对应的对象</span></span><br><span class="line">    <span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      i++</span><br><span class="line">      <span class="comment">// 无缝衔接</span></span><br><span class="line">      <span class="keyword">if</span> (i &gt;= sliderData.<span class="property">length</span>) &#123;</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(i)</span><br><span class="line">      <span class="comment">// console.log(sliderData[i])</span></span><br><span class="line">      <span class="comment">// 跟换图片路径</span></span><br><span class="line">      img.<span class="property">src</span> = sliderData[i].<span class="property">url</span></span><br><span class="line">      <span class="comment">//把文字写到P里面去</span></span><br><span class="line">      p.<span class="property">innerHTML</span> = sliderData[i].<span class="property">title</span></span><br><span class="line">      <span class="comment">// 小圆点</span></span><br><span class="line">      <span class="comment">// 先删除一起的active</span></span><br><span class="line">      <span class="comment">// 选中小圆点,删除它</span></span><br><span class="line">      <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.slider-indicator .active&#x27;</span>).<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">      <span class="comment">// 只让当前的li添加active</span></span><br><span class="line">      <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.slider-indicator li:nth-child(<span class="subst">$&#123;i + <span class="number">1</span>&#125;</span>)`</span>).<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><em><strong>掌握：事件绑定处理和事件对象，完成常见网页交互</strong></em></p>
+<h4 id="01-事件监听（绑定）"><a href="#01-事件监听（绑定）" class="headerlink" title="01-事件监听（绑定）"></a>01-事件监听（绑定）</h4><h4 id="语法：元素对象-addEventListener-‘事件类型’，要执行的函数"><a href="#语法：元素对象-addEventListener-‘事件类型’，要执行的函数" class="headerlink" title="语法：元素对象.addEventListener(‘事件类型’，要执行的函数)"></a><strong>语法：元素对象.addEventListener(‘事件类型’，要执行的函数)</strong></h4><p>简答：1.什么是事件</p>
+<p>事件是在编程时系统内发生的 <strong>动作</strong>或者发生的事情  比如用户在网页上<strong>单击</strong>一个按钮</p>
+<p>​            2.什么是事件监听</p>
+<p>让程序检测是否有事件产生，一旦有事件触发，就立即调用一个函数做出响应，也称为   绑定事件或者注册事件</p>
+<p>比如：鼠标经过显示下拉菜单，  点击可以播放轮播图等</p>
+<p><em><strong><u>！！！ 事件监听三要素：</u></strong></em></p>
+<p><strong>事件源：</strong> 哪个DOM元素被事件触发了，要获取DOM元素</p>
+<p><strong>事件类型：</strong> 用什么方式触发，比如鼠标单击click，鼠标经过mouseenter等</p>
+<p>​          **注意！！ 事件类型要加引号   函数是点击之后再去执行，每次点击都会执行一次 ** </p>
+<p><strong>事件调用的函数：</strong> 要做什么事</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 需求： 点击了按钮，弹出一个对话框</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 1. 事件源   按钮  </span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 2.事件类型 点击鼠标   click 字符串</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 3. 事件处理程序 弹出对话框</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">alert</span>(<span class="string">&#x27;你早呀~&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>（了解）发展史：</p>
+<p>DOM L0 ：是 DOM 的发展的第一个版本； L：level</p>
+<p> DOM L1：DOM级别1 于1998年10月1日成为W3C推荐标准</p>
+<p> DOM L2：使用addEventListener注册事件</p>
+<p> DOM L3： DOM3级事件模块在DOM2级事件的基础上重新定义了这些事件，也添加了一些新事件类型</p>
+<h4 id="02-事件类型"><a href="#02-事件类型" class="headerlink" title="02-事件类型"></a>02-事件类型</h4><p><strong>鼠标事件（鼠标触发）：</strong> click 鼠标点击      mouseenter 鼠标经过   mouseleave 鼠标离开</p>
+<p><strong>焦点事件（表单获得光标）:</strong>    focus 获得焦点    blur  失去焦点</p>
+<p><strong>键盘事件（键盘触发）：</strong> keydown 键盘按下触发   keyup  键盘抬起触发</p>
+<p><strong>文本事件（表单输入触发）：</strong>  input  用户输入事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 鼠标经过</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    div.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseenter&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`轻轻的我来了`</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 鼠标离开</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    div.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseleave&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`轻轻的我走了`</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="03-事件对象"><a href="#03-事件对象" class="headerlink" title="03-事件对象"></a>03-事件对象</h4><p><strong>获取事件对象：   语法  元素.addEventListener(‘click’,function(e){})</strong>      e:就是事件对象，在事件绑定的回调函数的第一个参数就是事件对象  一般命名为event，e。。。</p>
+<p><strong>常见事件对象属性：</strong> 1.type  获取当前的事件类型</p>
+<p>​                                      2.clientX&#x2F;clientY  获取光标相对于浏览器可见窗口左上角的位置</p>
+<p>​                                      3.offsetX &#x2F; offsetY 获取光标相对于当前DOM元素左上角的位置</p>
+<p>​                                       4.key 用户按下的键盘的值  （现在不提倡使用keyCode）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    input.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keyup&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">if</span> (e.<span class="property">key</span> === <span class="string">&#x27;Enter&#x27;</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我按下了回车键&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="04-环境对象："><a href="#04-环境对象：" class="headerlink" title="04-环境对象："></a>04-环境对象：</h4><p>指的是函数内部特殊的变量this， 它代表着当前函数运行时所处的环境</p>
+<p><em><strong>【谁调用，this就是谁】</strong></em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 每个函数里面都有this 环境对象  普通函数里面this指向的是window</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// function fn() &#123;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">//   console.log(this)</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// &#125;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// window.fn()</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// console.log(this)  // btn 对象</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// btn.style.color = &#x27;red&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">this</span>.<span class="property">style</span>.<span class="property">color</span> = <span class="string">&#x27;red&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="05-回调函数"><a href="#05-回调函数" class="headerlink" title="05-回调函数"></a>05-回调函数</h4><p>简单理解：当一个函数当作参数传递给另外一个函数的时候，这个函数就是回调函数</p>
+<p><strong>回调函数的本质还是函数，只不过是把她当作参数使用</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 1.给5个链接绑定鼠标经过事件</span></span><br><span class="line">    <span class="comment">// 1.1 获取a元素</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">as</span> = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.tab-nav a&#x27;</span>)</span><br><span class="line">    <span class="comment">// console.log(as)</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">as</span>.<span class="property">length</span>; i++) &#123;</span><br><span class="line">      <span class="comment">// console.log(as[i])</span></span><br><span class="line">      <span class="keyword">as</span>[i].<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseenter&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="comment">// console.log(&#x27;鼠标经过&#x27;)</span></span><br><span class="line">        <span class="comment">// 排他思想 移除类 添加类</span></span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.tab-nav .active&#x27;</span>).<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">        <span class="comment">// 添加类  this 当前的a</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">        <span class="comment">// 下面五个大盒子 .item</span></span><br><span class="line">        <span class="comment">// 移除类</span></span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.tab-content .active&#x27;</span>).<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">        <span class="comment">// 对应序号item 显示  添加acitve类</span></span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.tab-content .item:nth-child(<span class="subst">$&#123;i + <span class="number">1</span>&#125;</span>)`</span>).<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="01-事件流"><a href="#01-事件流" class="headerlink" title="01-事件流"></a>01-事件流</h4><p>事件流指的是事件完整执行过程中的流动路径  会经历两个阶段  分别是捕获阶段和冒泡阶段捕获阶段是从父到子  冒泡阶段是从子到父</p>
+<p>实际工作都是使用事件冒泡为主</p>
+<p><strong>02-事件捕获</strong></p>
+<p>DOM.addEventListener(事件类型，事件处理函数，是否使用捕获机制)  第三个参数传入<strong>true</strong>代表的是捕获阶段触发  若传入<strong>false</strong>代表冒泡阶段触发，<strong>默认是false</strong>   </p>
+<p>若是用L0事件监听 则只有冒泡阶段 没有捕获</p>
+<p><strong>03-事件冒泡</strong> </p>
+<p>概念：当一个元素触发事件后，会依次向上调用所有的父级元素的<u>同名事件</u></p>
+<p>事件冒泡是默认存在的</p>
+<p>L2事件监听第三个参数是false，或者默认都是冒泡</p>
+<p><strong>04-阻止冒泡</strong>   </p>
+<p><strong>前提：</strong> 阻止事件冒泡需要拿到事件对象</p>
+<p><strong>语法：</strong> 事件对象.stopPropagation()     此方法可以阻断事流动传播，不光是在冒泡阶段有效，捕获阶段也有效</p>
+<p>需要<strong>阻止默认行为</strong>的发生有：阻止链接的跳转，表单域跳转</p>
+<p><strong>语法：</strong> e.preventDefault()</p>
+<p><strong>05-解绑事件</strong>  </p>
+<p>on事件方式，直接使用null覆盖就可以实现事件的解绑</p>
+<p>addEventListener方式，必须使用：</p>
+<p>removeEventListener(事件类型, 事件处理函数, [获取捕获或者冒泡阶段])</p>
+<p><em><strong>注意：匿名函数无法被解绑</strong></em></p>
+<p><strong>鼠标经过事件的区别：</strong></p>
+<p>mouseover 和 mouseout 会有冒泡效果</p>
+<p>mouseenter 和 mouseleave  没有冒泡效果（推荐）</p>
+<p><strong>两种注册事件的区别：</strong></p>
+<p><em>（L0）传统on注册：</em></p>
+<p>1.同一个对象，后面注册的事件会覆盖前面注册（同一个事件）</p>
+<p>2.直接使用null覆盖就可以实现事件解绑</p>
+<p>3.都是冒泡阶段执行的</p>
+<p><em>（L2）事件监听注册</em></p>
+<p>1.语法：addEventListener（事件类型，事件处理函数，是否使用捕获）</p>
+<p>2.后面注册的事件不会覆盖前面注册的事件（同一个事件）</p>
+<p>3.可以通过第三个参数去确定是在冒泡或者捕获阶段执行</p>
+<p>4.必须使用removeEventListener(事件类型，事件处理函数，获取捕获或者冒泡阶段)</p>
+<p>5.匿名函数无法解绑</p>
+<h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><p>优点：减少注册次数，可以提高程序的性能</p>
+<p>原理：事件委托其实就是利用事件冒泡的特点，给<strong>父元素注册事件</strong> ，当我们触发子元素的时候，会冒泡到父元素身上，从而触发父元素的事件</p>
+<p>实现：<strong>事件对象.target.tagName</strong>可以获得真正触发事件的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第1个孩子<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第2个孩子<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第3个孩子<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第4个孩子<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第5个孩子<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我不需要变色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 点击每个小li 当前li 文字变为红色</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 按照事件委托的方式  委托给父级，事件写到父级身上</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 1. 获得父元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">const</span> ul = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;ul&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    ul.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// alert(11)</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// this.style.color = &#x27;red&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// console.dir(e.target) // 就是我们点击的那个对象</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// e.target.style.color = &#x27;red&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="comment">// 我的需求，我们只要点击li才会有效果</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">if</span> (e.<span class="property">target</span>.<span class="property">tagName</span> === <span class="string">&#x27;LI&#x27;</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        e.<span class="property">target</span>.<span class="property">style</span>.<span class="property">color</span> = <span class="string">&#x27;red&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>其他事件—页面加载事件</strong></p>
+<p>load事件：监听整个页面资源给windo加</p>
+<p>DoMContentLoaded:给document加，无需等待样式表，图像等完全加载</p>
+<p><em><strong>页面滚动事件(scroll):</strong></em></p>
+<p><strong>1-获取位置：</strong></p>
+<p>scrollLeft和scrollTop(属性)：</p>
+<ul>
+<li>获取被卷去的大小</li>
+<li>获取元素内容往左，往上滚出去看不到的距离</li>
+<li>这两个值是可读写的</li>
+</ul>
+<p>尽量在scroll事件里面获取被卷去的距离</p>
+<p><strong>注意！document.documentElement  HTML文档返回对象为HTML元素</strong></p>
+<p><strong>2-滚动到指定的坐标：</strong></p>
+<p>语法：元素.scrollTo（x，y）</p>
+<p><em><strong>页面尺寸事件（resize）：</strong></em></p>
+<p>会在窗口尺寸改变的时候触发事件</p>
+<p><strong>1-获取元素宽高：</strong></p>
+<p>获取元素的可见部分宽高（不包含边框，margin，滚动条等）</p>
+<p><em>clientWidth</em>和<em>clientHeight</em></p>
+<p><strong>2-元素尺寸与位置-尺寸</strong></p>
+<ul>
+<li><p>offseftLeft和offsetTop  是已读属性</p>
+</li>
+<li><p>element.getBoundingClientRect方法返回元素的大小及其相对于视口的位置</p>
+<p><em><strong>总结：</strong></em></p>
+<p><em><strong>1.scrollLeft和scrollTop  被卷去的头部和左侧，配合页面滚动来用，可读</strong></em> 2.clientWidth和clientHeight  获得元素宽度和高度，不包含border，margin，滚动条，用于js获取元素大小，只读属性</p>
+<p>3.offsetWidth和offsetHeight 获取元素的宽度和高度，包含border，padding，滚动条等，只读元素</p>
+<p><em><strong>4.offseLeft和offsetTop  获取元素距离自己定位父级元素的左，上距离     获取元素位置的时候使用，只读属性</strong></em></p>
+</li>
+</ul>
+<p><em><strong>练习：电梯导航模块，全选反选</strong></em></p>
+<h4 id="01-日期对象"><a href="#01-日期对象" class="headerlink" title="01-日期对象"></a>01-日期对象</h4><p>用来表示时间的对象，可以得到当前系统时间</p>
+<p><strong>1.1实例化：  在代码中发现了new关键字时，一般将这个操作称为实例化</strong></p>
+<p><em><strong>获取当前时间：</strong></em>const date &#x3D; new Date（）</p>
+<p><em><strong>1.2日期对象方法</strong></em></p>
+<p>getFullYear()     获得年份     获取四位年份</p>
+<p>getMonth()        获得月份     取值为 0 ~ 11 </p>
+<p>getDate()            获取月份中的每一天        不同月份取值也不相同</p>
+<p>getDay()              获取星期      取值为 0 ~ 6</p>
+<p>getHours()          获取小时      取值为 0 ~ 23</p>
+<p>getMinutes()       获取分钟      取值为 0 ~ 59</p>
+<p>getSeconds()       获取秒          取值为 0 ~ 59</p>
+<p><em><strong>1.3时间戳</strong></em> （毫秒）     （使用场景为计算倒计时的效果）</p>
+<p><strong>算法：</strong> 将来的时间戳 - 现在的时间戳 &#x3D; 剩余时间毫秒数</p>
+<p>​             剩余时间毫秒数 转换为剩余时间的 年月日时分秒  就是倒计时时间</p>
+<p><strong>公式：</strong>转换公式：</p>
+<p> d &#x3D; parseInt(总秒数&#x2F; 60&#x2F;60 &#x2F;24); &#x2F;&#x2F; 计算天数</p>
+<p> h &#x3D; parseInt(总秒数&#x2F; 60&#x2F;60 %24) &#x2F;&#x2F; 计算小时</p>
+<p> m &#x3D; parseInt(总秒数 &#x2F;60 %60 ); &#x2F;&#x2F; 计算分数</p>
+<p> s &#x3D; parseInt(总秒数%60); &#x2F;&#x2F; 计算当前秒数</p>
+<p><em><strong>三种方式获取时间戳：</strong></em></p>
+<p>1.使用getTime()方法</p>
+<p>2.简写 +new Date（） （一般推荐使用这种）</p>
+<p>3.使用Date.now()  – 无实例化，只能得到当前的时间戳，而前面两种可以返回指定时间的时间戳</p>
+<h4 id="02-节点操作"><a href="#02-节点操作" class="headerlink" title="02-节点操作"></a>02-节点操作</h4><p><strong>2.1-DOM节点（DOM数里面每一个内容都称之为节点）：</strong></p>
+<p>元素节点： 所有的标签 比如body，div    html是根节点</p>
+<p>属性节点：所有的属性  比如href</p>
+<p>文本节点：所有的文本</p>
+<p><strong>2.2-查找节点</strong></p>
+<p><strong>父节点查找：  子元素.parentNode</strong>（返回最近一级的父节点 找不到返回为null）  </p>
+<p><strong>子节点查找：  父元素.children</strong>  （仅获得所有元素节点&#x2F;返回的还是一个伪数组）</p>
+<p>childNodes：获得所有子阶段，包括文本节点（空格，换行），注释节点等</p>
+<p><strong>兄弟关系查找：  1.下一个兄弟节点   nextElementSibling</strong></p>
+<p>​                              <strong>2.上一个兄弟节点   previousElementSibling</strong> </p>
+<p><strong>2.3-增加节点</strong> </p>
+<p>步骤：创建一个新的节点 &#x3D;&#x3D;&#x3D;》把创建的新的节点放入到指定的元素内部</p>
+<p><strong>创建元素节点的方法：  document.createElement(‘标签名’)</strong> </p>
+<p><strong>追加节点：</strong></p>
+<p><em>插入到父元素的最后一个元素：   父元素.appendChild（要插入的元素）</em></p>
+<p><em>插入到某个子元素的前面    父元素.insertBefore(要插入的元素，在哪个元素前面)</em></p>
+<p><strong>克隆节点：   克隆一个已有的元素节点：元素.cloneNode(布尔值)</strong></p>
+<p>*若为true，则代表克隆时会包含后代节点一起克隆</p>
+<p>*若为false，则代表克隆时不包含后代节点</p>
+<p>*默认为false</p>
+<p><strong>2.4-删除节点     （要删除元素必须通过父元素删除）</strong></p>
+<p><strong>语法：  父元素.removeChild(要删除的元素)</strong></p>
+<p>*如不存在父子关系则删除不成功</p>
+<p>*删除节点和隐藏节点（display：none）有区别的：隐藏节点还是存在的，但是删除，则从html中删除节点</p>
+<h4 id="03-M端事件（移动端）"><a href="#03-M端事件（移动端）" class="headerlink" title="03-M端事件（移动端）"></a>03-M端事件（移动端）</h4><p><strong>触屏事件touch（也称触摸事件）</strong>  Android和IOS都有</p>
+<p><strong>touch</strong> 对象代表一个触摸点。触摸点可能是一根手指，也可能是一根触摸笔。触屏事件可响应用户手指（触摸笔）对屏幕或触控板操作。</p>
+<p><strong>常见的触屏touch事件：</strong> </p>
+<p>touchstart               手指触摸到一个DOM元素是触发</p>
+<p>touchmove              手指在一个DOM元素上滑动是触发</p>
+<p>touchend                 手指从一个DOM元素上移开时触发</p>
+<h4 id="04-插件"><a href="#04-插件" class="headerlink" title="04-插件"></a>04-插件</h4><p> 插件: 就是别人写好的一些代码,我们只需要复制对应的代码,就可以直接实现对应的效果</p>
+<p> 学习插件的基本过程</p>
+<p> 熟悉官网,了解这个插件可以完成什么需求    <a target="_blank" rel="noopener" href="https://www.swiper.com.cn/">https://www.swiper.com.cn/</a> </p>
+<p> 看在线演示,找到符合自己需求的demo</p>
+<p> <a target="_blank" rel="noopener" href="https://www.swiper.com.cn/demo/index.html">https://www.swiper.com.cn/demo/index.html</a></p>
+<p> 查看基本使用流程     <a target="_blank" rel="noopener" href="https://www.swiper.com.cn/usage/index.html">https://www.swiper.com.cn/usage/index.html</a></p>
+<p> 查看APi文档,去配置自己的插件   <a target="_blank" rel="noopener" href="https://www.swiper.com.cn/api/index.html">https://www.swiper.com.cn/api/index.html</a></p>
+<p> 注意: 多个swiper同时使用的时候, 类名需要注意区分</p>
+<h4 id="重绘和回流"><a href="#重绘和回流" class="headerlink" title="重绘和回流"></a>重绘和回流</h4><p><strong>回流：</strong>当 Render Tree 中部分或者全部元素的尺寸、结构、布局等发生改变时，浏览器就会重新渲染部分或全部文档的过程称为 回流。</p>
+<p><strong>重绘：</strong>由于节点(元素)的样式的改变并不影响它在文档流中的位置和文档布局时(比如：color、background-color、outline等), 称为重绘。</p>
+<p><em><strong><u>重绘不一定引起回流，而回流一定会引起重绘</u></strong></em> </p>
+<p><em>会导致回流（重排）的操作：</em></p>
+<p>*页面的首次刷新</p>
+<p>*浏览器的窗口大小发生改变</p>
+<p>*元素的大小或位置发生改变</p>
+<p>*改变字体的字样</p>
+<p>*内容的变化（如：input框的输入，图片的大小）</p>
+<p>*激活css伪类（如：:hover）</p>
+<p>*脚本操作DOM（添加或者删除可见的DOM 元素）</p>
+<p><strong>简单来说 影响到布局了 就会有回流</strong></p>
+<p><strong>练习：  学成在线渲染案例  倒计时案例  微博发布案例</strong></p>
+<h4 id="01-Window对象"><a href="#01-Window对象" class="headerlink" title="01-Window对象"></a>01-Window对象</h4><p><strong>1.1定时器-延时函数      语法：  setTimeout（回调函数，等待的毫秒数）</strong>  </p>
+<p>setTimeout只执行一次</p>
+<p><strong>清除延时函数：</strong> let timer &#x3D; setTimeout（回调函数，等待的毫秒数）</p>
+<p>​                             clearTimeout（timer）</p>
+<p><em><strong>注意！延时器需要等待，所以后面的代码会先执行，每一次调用延时器都会产生一个新的延时器</strong></em></p>
+<p>**1.2  JS执行机制       **</p>
+<p>最大的特点就是<strong>单线程</strong>，同一时间只能做一件事</p>
+<p>分为同步和异步：</p>
+<p><strong>同步任务：</strong> 都在主线程上执行，形成一个执行栈。</p>
+<p><strong>异步任务：</strong> 通过回调函数实现的。有以下三种类型</p>
+<p>*1.普通事件，如click，resize等</p>
+<p>*2.资源加载，如load，error等</p>
+<p>*3.定时器，包括setInterval，setTimeout等</p>
+<p>异步任务相关添加到<strong>任务队列</strong>中（任务队列也称为消息队列）</p>
+<p><strong>执行步骤：</strong> 1.先执行<strong>执行栈中的同步任务</strong></p>
+<p>​                     2.异步任务放入任务队列中</p>
+<p>​                     3.一旦执行栈中的所有同步任务执行完毕，系统就会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行。</p>
+<p>由于主线程不断的重复获得任务，执行任务，再获取任务，再执行，所以这种机制被称为<em><strong>事件循环（event loop）</strong></em></p>
+<p><strong>1.3 location对象</strong></p>
+<p>location数据类型是对象，它拆分并保存了URL地址各个组成部分</p>
+<p>常用的属性和方法：</p>
+<p><strong>href</strong>属性获取完整的URL地址，对其赋值时用于地址的跳转</p>
+<p><strong>search</strong>属性获取地址中携带的参数，符号？后面的部分</p>
+<p><strong>hash</strong>属性获取地址中的哈希值，符号#后面部分</p>
+<p><strong>reload</strong>方法用来刷新当前页面，传入参数true时表示强制刷新</p>
+<p><strong>1.4 histroy对象</strong></p>
+<p>数据类型是对象，主要管理历史记录，该对象与浏览器地址栏的操作相对应，如前进，后退，历史记录等</p>
+<p>常用属性和方法：</p>
+<p>back（）          可以后退的功能</p>
+<p>forward（）     前进功能</p>
+<p>go（参数）        前进后退功能 参数如果是1 前进1个页面  如果是-1 后退一个页面</p>
+<h4 id="02-本地存储"><a href="#02-本地存储" class="headerlink" title="02-本地存储"></a>02-本地存储</h4><p><strong>2.1 本地存储分类- localStorage</strong></p>
+<p><strong>作用：</strong>可以将数据永久存储在本地（用户的电脑），除非手动删除，否则关闭页面也会存在</p>
+<p><strong>特性：</strong> 可以多窗口（页面）共享（同一浏览器可以共享）&#x2F;以键值对的形式存储使用</p>
+<p><em><strong>语法：    1.存储数据：  localStorage.setltem(key,value)</strong></em> </p>
+<p>​                 <em><strong>2.获取数据：localStorage.getltem(key)</strong></em> </p>
+<p>​                 <strong>3.删除数据：localStorage.removeltem(key)</strong> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 存储</span></span><br><span class="line">   <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;uname&#x27;</span>, <span class="string">&#x27;熊大&#x27;</span>)</span><br><span class="line">   <span class="comment">// 获取</span></span><br><span class="line">   <span class="keyword">const</span> n = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;uname&#x27;</span>)</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(n)</span><br><span class="line">   <span class="comment">// 删除</span></span><br><span class="line">   <span class="comment">// localStorage.removeItem(&#x27;uname&#x27;)</span></span><br><span class="line">   <span class="comment">// 改  如果原来有这个键则是改，没有就是新增</span></span><br><span class="line">   <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;uname&#x27;</span>, <span class="string">&#x27;熊二&#x27;</span>)</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 本地存储只能存储字符串数据类型</span></span><br><span class="line">   <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;age&#x27;</span>, <span class="number">18</span>)</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;age&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>2.2 本地存储分类- sessionStorage</strong> </p>
+<p>特性：*生命周期为关闭浏览器窗口</p>
+<p>​            *在同一个窗口（页面）下数据可以共享</p>
+<p>​            *以键值对的形式存储使用</p>
+<p>​            *用法跟localStorage基本相同</p>
+<p><strong>2.3 存储复杂数据类型</strong></p>
+<p><em><strong>本地只能存储字符串，无法存储复杂数据类型</strong></em> </p>
+<p><strong>解决：</strong> 需要将复杂数据类型转换成JSON字符串，再存储到本地</p>
+<p><strong>语法：JSON.stringify(复杂数据类型)</strong> </p>
+<p>因为本地存储里面取出来的是字符串，不是对象，无法直接使用，所以要<strong>把取出来的字符串转换为对象</strong></p>
+<p><strong>语法：JSON.parse(JSON字符串)</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">      <span class="attr">uname</span>: <span class="string">&#x27;熊大&#x27;</span>,</span><br><span class="line">      <span class="attr">age</span>: <span class="number">18</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//1. 复杂数据类型存储必须转换为JSON字符串</span></span><br><span class="line">    <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;obj&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj))</span><br><span class="line">    <span class="comment">//2.把JSON字符串转换为对象</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;obj&#x27;</span>)))</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>数组中map方法  迭代数组</strong></em></p>
+<p><em><strong>map可以处理数据，并且返回新的数组      也称为映射。</strong></em> </p>
+<p>语法：const arr &#x3D; [‘pink’,’red’,’blue’]</p>
+<p>​           arr.map(function(item,index){</p>
+<p>​                  console.log(item)           &#x2F;&#x2F; item 得到数组元素‘pink’  ‘red’ ‘blue’</p>
+<p>​                  console.log(index)          &#x2F;&#x2F; index 得到索引号  0 1 2 </p>
+<p>​                  }）</p>
+<p><strong>map可以处理数据，并且返回新的数组</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> arr = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">    <span class="comment">// map 方法也是遍历    处理数据   可以返回一个数组</span></span><br><span class="line">    <span class="keyword">const</span> newArr = arr.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">item, i</span>) &#123;</span><br><span class="line">      <span class="comment">// console.log(item)     //数组元素</span></span><br><span class="line">      <span class="comment">// console.log(i)         //下标</span></span><br><span class="line">      <span class="comment">// 把 item老师  放到新数组里(red老师)</span></span><br><span class="line">      <span class="keyword">return</span> item + <span class="string">&#x27;老师&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(newArr)</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><em><strong>数组中join方法</strong></em> </p>
+<p>join（）方法用于把数组中的元素转换一个字符串</p>
+<p><strong>语法：</strong> const arr &#x3D; [‘pink老师’，’red老师’，’blue老师’] </p>
+<p>​              console.log(arr.join(‘’))     &#x2F;&#x2F; pink老师 red老师 blue老师</p>
+<p>数组元素是通过参数里面指定的额分隔符进行分隔的 </p>
+<p> <strong>join（‘’）里面加的是分隔符号 如果没有，元素就默认连接在一起</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> arr = [<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;blue&#x27;</span>,<span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">    <span class="comment">// 把数组元素转换为字符串</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>))</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>练习：必须独立写出学生信息表案例</strong></p>
+<h4 id="01-正则表达式"><a href="#01-正则表达式" class="headerlink" title="01-正则表达式"></a>01-正则表达式</h4><p>正则表达式是用于匹配字符串中字符组合的<strong>模式</strong>，在js中，正则表达式也是对象通常用来查找，替换那些符合正则表达式的文本。</p>
+<p><strong>使用场景：</strong> </p>
+<p>*例如表单验证，用户表单只能输入英文字母，数字或下划线（<strong>匹配</strong>）</p>
+<p>*过滤页面内容中的一些敏感词（<strong>替换</strong>），或从字符串中获取我们想要的特定部分等（<strong>提取</strong>）</p>
+<p><strong>定义正则表达式语法： const 变量名 &#x3D; &#x2F;表达式&#x2F;</strong>     （&#x2F; &#x2F;  是正则表达式字面量）</p>
+<p>​                           <strong>查找：const reg &#x3D; &#x2F;  &#x2F;</strong></p>
+<p><strong>1-判断是否有符合规则的字符串  test()方法    ()写被检测的字符串</strong>  <strong><u>返回的是布尔值</u></strong></p>
+<p><strong>2-检索（查找）符合规则的字符串  exec()方法   在一个指定字符串中执行一个搜索匹配</strong>       （如果匹配成功，exec（）方法**<u>返回一个数组，否则返回null</u>**）</p>
+<p><strong>元字符：</strong> 是一些具有特殊含义的字符，可以极大提高了灵活性和强大的匹配功能</p>
+<p><strong>参考文档：</strong></p>
+<p> MDN：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions</a></p>
+<p> 正则测试工具: <a target="_blank" rel="noopener" href="http://tool.oschina.net/regex">http://tool.oschina.net/regex</a></p>
+<p><strong>边界符：</strong> （位置符）用来*<u>提示字符所处的位置</u>* </p>
+<p>^ :表示匹配行首的文本（以谁开始）</p>
+<p>$ :表示匹配行尾的文本（以谁结束）</p>
+<p>如果 ^ 和 $ 在一起，表示必须是精确匹配</p>
+<p><strong>量词：</strong> （表示重复次数）用来*<u>设定某个模式出现的次数</u>* </p>
+<p> *** **   重复零次或更多次</p>
+<p><strong>+</strong>   重复一次或更多次</p>
+<p><strong>？</strong>  重复零次或一次</p>
+<p><strong>{n}</strong>  重复n次</p>
+<p><strong>{n，}</strong>   重复n次或更多次</p>
+<p><strong>{n，m}</strong>   重复n-m次</p>
+<p><em><strong><u>注意！ 逗号左右两侧千万不要出现空格</u></strong></em></p>
+<p><strong>字符类：</strong> [ ]匹配字符集合  里面^取反符号 [^a-z] 匹配除了小写字母以外的字符</p>
+<p></p>
+<p><strong>[ ] 里面加上 - 连字符   表示一个范围</strong> </p>
+<p>比如[a-z] 表示a-z   26 个英文字母都可以</p>
+<p> [a-zA-Z]表示大小写都可以</p>
+<p>[0-9]表示0-9的数字都可以</p>
+<p><strong>简写方式：</strong> </p>
+<p>\d         匹配0-9之间的任一数字   相当于【0-9】</p>
+<p>\D         匹配0-9以外的字符   相当于【^0-9】</p>
+<p>\w         匹配任意的字母，数字，下划线，相当于【A-Za-z0-9-_】</p>
+<p>\W         除所有字母，数字和下划线以外的字符，相当于【^A-Za-z0-9-_】</p>
+<p>\s           匹配空格（包括换行符，制表符，空格符等），相等于【\t\r\n\v\f】</p>
+<p>\S           匹配非空格的字符，相当于【^\t\r\n\v\f】</p>
+<p><strong>修饰符：     语法：&#x2F;表达式&#x2F;修饰符</strong> </p>
+<p><strong>i</strong>    表示正则匹配时字母不区分大小写</p>
+<p>**g **   表示匹配所有满足正则表达式的结果</p>
+<p><strong>replace 替换     语法：字符串.replace(&#x2F;正则表达式&#x2F;,’替换的文本’)</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="regexp">/^java$/</span>.<span class="title function_">test</span>(<span class="string">&#x27;java&#x27;</span>))</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="regexp">/^java$/i</span>.<span class="title function_">test</span>(<span class="string">&#x27;JAVA&#x27;</span>))</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="regexp">/^java$/i</span>.<span class="title function_">test</span>(<span class="string">&#x27;Java&#x27;</span>))</span><br><span class="line"></span><br><span class="line">   <span class="keyword">const</span> str = <span class="string">&#x27;java是一门编程语言，学完JAVA工作很高&#x27;</span></span><br><span class="line">   <span class="comment">// i 大小写  g 所有的</span></span><br><span class="line">   <span class="keyword">const</span> re = str.<span class="title function_">replace</span>(<span class="regexp">/java/ig</span>,<span class="string">&#x27;前端&#x27;</span>)</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(re)</span><br></pre></td></tr></table></figure>
+
+<h2 id="webAPIs综合案例"><a href="#webAPIs综合案例" class="headerlink" title="webAPIs综合案例"></a>webAPIs综合案例</h2><h6 id="学生信息表"><a href="#学生信息表" class="headerlink" title="学生信息表"></a>学生信息表</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//学生信息表</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 参考数据</span></span><br><span class="line">    <span class="comment">// const initData = [</span></span><br><span class="line">    <span class="comment">//   &#123;</span></span><br><span class="line">    <span class="comment">// stuId: 1001,</span></span><br><span class="line">    <span class="comment">// uname: &#x27;欧阳霸天&#x27;,</span></span><br><span class="line">    <span class="comment">// age: 19,</span></span><br><span class="line">    <span class="comment">// gender: &#x27;男&#x27;,</span></span><br><span class="line">    <span class="comment">// salary: &#x27;20000&#x27;,</span></span><br><span class="line">    <span class="comment">// city: &#x27;上海&#x27;,</span></span><br><span class="line">    <span class="comment">//   &#125;</span></span><br><span class="line">    <span class="comment">// ]</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1.读取本地存储数据    student-data 本地存储的命名</span></span><br><span class="line">    <span class="keyword">const</span> data = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;student-data&#x27;</span>)</span><br><span class="line">    <span class="comment">// 2.如果有就返回对象，没有就声明一个空数组</span></span><br><span class="line">    <span class="keyword">const</span> arr = data ? <span class="title class_">JSON</span>.<span class="title function_">parse</span>(data) : []</span><br><span class="line">    <span class="comment">// const arr = [</span></span><br><span class="line">    <span class="comment">//   &#123;</span></span><br><span class="line">    <span class="comment">//     stuId: 1001,</span></span><br><span class="line">    <span class="comment">//     uname: &#x27;欧阳霸天&#x27;,</span></span><br><span class="line">    <span class="comment">//     age: 19,</span></span><br><span class="line">    <span class="comment">//     gender: &#x27;男&#x27;,</span></span><br><span class="line">    <span class="comment">//     salary: &#x27;20000&#x27;,</span></span><br><span class="line">    <span class="comment">//     city: &#x27;上海&#x27;,</span></span><br><span class="line">    <span class="comment">//   &#125;</span></span><br><span class="line">    <span class="comment">// ]</span></span><br><span class="line">    <span class="comment">// console.log(arr)</span></span><br><span class="line">    <span class="comment">// 获取tbody</span></span><br><span class="line">    <span class="keyword">const</span> tbody = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;tbody&#x27;</span>)</span><br><span class="line">    <span class="comment">// 3.渲染模块函数</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="comment">// 遍历数组arr  有几个对象就生成几个tr  然后追加给 tbody</span></span><br><span class="line">      <span class="keyword">const</span> trArr = arr.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">item, i</span>) &#123;</span><br><span class="line">        <span class="comment">// console.log(item)</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(item.<span class="property">uname</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;tr&gt;</span></span><br><span class="line"><span class="string">          &lt;td&gt;<span class="subst">$&#123;item.stuId&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">          &lt;td&gt;<span class="subst">$&#123;item.uname&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">          &lt;td&gt;<span class="subst">$&#123;item.age&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">          &lt;td&gt;<span class="subst">$&#123;item.gender&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">          &lt;td&gt;<span class="subst">$&#123;item.salary&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">          &lt;td&gt;<span class="subst">$&#123;item.city&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">          &lt;td&gt;</span></span><br><span class="line"><span class="string">            &lt;a href=&quot;javascript:&quot; data-id=<span class="subst">$&#123;i&#125;</span>&gt;删除&lt;/a&gt;</span></span><br><span class="line"><span class="string">          &lt;/td&gt;</span></span><br><span class="line"><span class="string">        &lt;/tr&gt; </span></span><br><span class="line"><span class="string">        `</span></span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="comment">// console.log(trArr)</span></span><br><span class="line">      <span class="comment">// 追加给tbody</span></span><br><span class="line">      <span class="comment">// 因为trArr 是个数组 我们不需要数组  要tr字符串  用join</span></span><br><span class="line">      tbody.<span class="property">innerHTML</span> = trArr.<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">render</span>()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 4.录入模块</span></span><br><span class="line">    <span class="keyword">const</span> info = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.info&#x27;</span>)</span><br><span class="line">    <span class="comment">// 获取表单form 里面带有 name 属性的元素</span></span><br><span class="line">    <span class="keyword">const</span> items = info.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;[name]&#x27;</span>)</span><br><span class="line">    <span class="comment">// console.log(items)</span></span><br><span class="line">    info.<span class="title function_">addEventListener</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">      <span class="comment">// 阻止提交</span></span><br><span class="line">      e.<span class="title function_">preventDefault</span>()</span><br><span class="line">      <span class="comment">// 声明空的对象</span></span><br><span class="line">      <span class="keyword">const</span> obj = &#123;&#125;</span><br><span class="line">      <span class="comment">// obj.stuId = arr.length + 1</span></span><br><span class="line">      obj.<span class="property">stuId</span> = arr.<span class="property">length</span> ? arr[arr.<span class="property">length</span> - <span class="number">1</span>].<span class="property">stuId</span> + <span class="number">1</span> : <span class="number">1</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 非空判断</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; items.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="comment">// console.log(items)   //数组里包含5个表单</span></span><br><span class="line">        <span class="comment">// console.log(item[i])  //每个表单 对象</span></span><br><span class="line">        <span class="comment">// console.log(item[i].name)</span></span><br><span class="line">        <span class="keyword">const</span> item = items[i]</span><br><span class="line">        <span class="keyword">if</span> (items[i].<span class="property">value</span> === <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="title function_">alert</span>(<span class="string">&#x27;输入内容不能为空，请重新输入&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// console.log(item.name)</span></span><br><span class="line">        <span class="comment">// obj[item.name] === obj.name  obj.age</span></span><br><span class="line">        obj[item.<span class="property">name</span>] = item.<span class="property">value</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// console.log(obj)</span></span><br><span class="line">      <span class="comment">// 追加给数组</span></span><br><span class="line">      arr.<span class="title function_">push</span>(obj)</span><br><span class="line">      <span class="comment">// 把数组 arr 存储到本地存储里面</span></span><br><span class="line">      <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;student-data&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(arr))</span><br><span class="line">      <span class="comment">// 渲染页面</span></span><br><span class="line">      <span class="title function_">render</span>()</span><br><span class="line">      <span class="comment">// 重置表单</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">reset</span>()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 5.删除模块</span></span><br><span class="line">    tbody.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (e.<span class="property">target</span>.<span class="property">tagName</span> === <span class="string">&#x27;A&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// console.log(e.target.dataset.id)</span></span><br><span class="line">        <span class="comment">// 删除数组对应的数据</span></span><br><span class="line">        arr.<span class="title function_">splice</span>(e.<span class="property">target</span>.<span class="property">dataset</span>.<span class="property">id</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="comment">// 写入本地存储</span></span><br><span class="line">        <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;student-data&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(arr))</span><br><span class="line">        <span class="comment">// 重新渲染</span></span><br><span class="line">        <span class="title function_">render</span>()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="放大镜"><a href="#放大镜" class="headerlink" title="放大镜"></a>放大镜</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 放大镜效果</span></span><br><span class="line"><span class="comment">//  1.获取三个盒子</span></span><br><span class="line"><span class="comment">// 1.1小盒子  图片切换效果</span></span><br><span class="line"><span class="keyword">const</span> small = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.small&#x27;</span>)</span><br><span class="line"><span class="comment">// 中盒子</span></span><br><span class="line"><span class="keyword">const</span> middle = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.middle&#x27;</span>)</span><br><span class="line"><span class="comment">// 大盒子</span></span><br><span class="line"><span class="keyword">const</span> large = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.large&#x27;</span>)</span><br><span class="line"><span class="comment">// 2.事件委托</span></span><br><span class="line">small.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseover&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (e.<span class="property">target</span>.<span class="property">tagName</span> === <span class="string">&#x27;IMG&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">// console.log(&#x27;111&#x27;)</span></span><br><span class="line">    <span class="comment">// 排他思想</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.active&#x27;</span>).<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    <span class="comment">// parentNode 离它最近的上一级  就是给li添加</span></span><br><span class="line">    e.<span class="property">target</span>.<span class="property">parentNode</span>.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    <span class="comment">// e.target.src 是小图片</span></span><br><span class="line">    <span class="comment">// 让中等盒子的图片  src 换为小图片 src</span></span><br><span class="line">    middle.<span class="title function_">querySelector</span>(<span class="string">&#x27;img&#x27;</span>).<span class="property">src</span> = e.<span class="property">target</span>.<span class="property">src</span></span><br><span class="line">    <span class="comment">// 大盒子更换背景图片</span></span><br><span class="line">    large.<span class="property">style</span>.<span class="property">backgroundImage</span> = <span class="string">`url(<span class="subst">$&#123;e.target.src&#125;</span>)`</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.鼠标经过中等盒子  显示隐藏大盒子</span></span><br><span class="line">middle.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseenter&#x27;</span>, show)</span><br><span class="line">middle.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseleave&#x27;</span>, hide)</span><br><span class="line"><span class="keyword">let</span> timeId = <span class="number">0</span></span><br><span class="line"><span class="comment">// 封装函数  显示</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">show</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 防止卡bug 先清除定时器</span></span><br><span class="line">  <span class="built_in">clearTimeout</span>(timeId)</span><br><span class="line">  large.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&#x27;block&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 隐藏  加定时器让用户体验变好</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hide</span>(<span class="params"></span>) &#123;</span><br><span class="line">  timeId = <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    large.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&#x27;none&#x27;</span></span><br><span class="line">  &#125;, <span class="number">200</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.鼠标经过大盒子 显示隐藏</span></span><br><span class="line">large.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseenter&#x27;</span>, show)</span><br><span class="line">large.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseleave&#x27;</span>, hide)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5.鼠标经过中等盒子 显示隐藏黑色遮罩层</span></span><br><span class="line"><span class="keyword">const</span> layer = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.layer&#x27;</span>)</span><br><span class="line">middle.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseenter&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  layer.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&#x27;block&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line">middle.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseleave&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  layer.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&#x27;none&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6.移动黑色遮罩层</span></span><br><span class="line">middle.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousemove&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="comment">// 鼠标在middle 盒子里面的坐标 = 鼠标在页面中的坐标 - middle 中等盒子的坐标</span></span><br><span class="line">  <span class="comment">// console.log(e.pageX)鼠标在页面中的坐标</span></span><br><span class="line">  <span class="comment">// middle 中等盒子的坐标</span></span><br><span class="line">  <span class="comment">// console.log(middle.getBoundingClientRect().left)</span></span><br><span class="line">  <span class="keyword">let</span> x = e.<span class="property">pageX</span> - middle.<span class="title function_">getBoundingClientRect</span>().<span class="property">left</span></span><br><span class="line">  <span class="keyword">let</span> y = e.<span class="property">pageY</span> - middle.<span class="title function_">getBoundingClientRect</span>().<span class="property">top</span> - <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span><br><span class="line">  <span class="comment">// console.log(x, y)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 黑色遮罩层移动 在 middle 盒子内 限定移动距离</span></span><br><span class="line">  <span class="keyword">if</span> (x &gt;= <span class="number">0</span> &amp;&amp; x &lt;= <span class="number">400</span> &amp;&amp; y &gt;= <span class="number">0</span> &amp;&amp; y &lt;= <span class="number">400</span>) &#123;</span><br><span class="line">    <span class="comment">// 黑色盒子不是一直移动的</span></span><br><span class="line">    <span class="comment">// 声明两个变量 黑色盒子移动的变量 mx my</span></span><br><span class="line">    <span class="keyword">let</span> mx = <span class="number">0</span>, my = <span class="number">0</span></span><br><span class="line">    <span class="comment">// 如果鼠标在盒子左的位置小于100 黑色黑子不移动</span></span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">100</span>) mx = <span class="number">0</span></span><br><span class="line">    <span class="comment">// 如果鼠标在盒子左的位置在100-300之间  黑色盒子开始移动并且减去鼠标在盒子左边100的距离 就是黑色盒子从左边0的位置开始，不是直接从左边100开始</span></span><br><span class="line">    <span class="keyword">if</span> (x &gt;= <span class="number">100</span> &amp;&amp; x &lt;= <span class="number">300</span>) mx = x - <span class="number">100</span></span><br><span class="line">    <span class="comment">// 如果鼠标在盒子左边的位置大于了300 ，黑色盒子移动到左边200的距离就可以了</span></span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">300</span>) mx = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (y &lt; <span class="number">100</span>) my = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> (y &gt;= <span class="number">100</span> &amp;&amp; y &lt;= <span class="number">300</span>) my = y - <span class="number">100</span></span><br><span class="line">    <span class="keyword">if</span> (y &gt; <span class="number">300</span>) my = <span class="number">200</span></span><br><span class="line">    layer.<span class="property">style</span>.<span class="property">left</span> = mx + <span class="string">&#x27;px&#x27;</span></span><br><span class="line">    layer.<span class="property">style</span>.<span class="property">top</span> = my + <span class="string">&#x27;px&#x27;</span></span><br><span class="line">    <span class="comment">// 大盒子的  背景图片移动(backgroundPositionX) 随中等盒子移动   存在的关系是2倍</span></span><br><span class="line">    large.<span class="property">style</span>.<span class="property">backgroundPositionX</span> = -<span class="number">2</span> * mx + <span class="string">&#x27;px&#x27;</span></span><br><span class="line">    large.<span class="property">style</span>.<span class="property">backgroundPositionY</span> = -<span class="number">2</span> * my + <span class="string">&#x27;px&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h6 id="电梯"><a href="#电梯" class="headerlink" title="电梯"></a>电梯</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 电梯</span></span><br><span class="line"><span class="comment">// 第一模块页面滑动</span></span><br><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 获取元素</span></span><br><span class="line">  <span class="comment">// 获取要在那显示电梯的盒子</span></span><br><span class="line">  <span class="keyword">const</span> entry = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.xtx_entry&#x27;</span>)</span><br><span class="line">  <span class="comment">// 获取电梯</span></span><br><span class="line">  <span class="keyword">const</span> elevator = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.xtx-elevator&#x27;</span>)</span><br><span class="line">  <span class="comment">// 1.当页面滚动大于300像素，显示电梯导航</span></span><br><span class="line">  <span class="comment">// 2.给页面添加滚动事件</span></span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 被卷去的头部 大于185</span></span><br><span class="line">    <span class="keyword">const</span> n = <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span><br><span class="line">    <span class="comment">// console.log(n)</span></span><br><span class="line">    <span class="comment">// if (n &gt;= 300) &#123;</span></span><br><span class="line">    <span class="comment">//   elevator.style.opacity = 1</span></span><br><span class="line">    <span class="comment">// &#125; else &#123;</span></span><br><span class="line">    <span class="comment">//   elevator.style.opacity = 0</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// opacity 透明</span></span><br><span class="line">    elevator.<span class="property">style</span>.<span class="property">opacity</span> = n &gt;= entry.<span class="property">offsetTop</span> ? <span class="number">1</span> : <span class="number">0</span></span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// 点击返回顶部</span></span><br><span class="line">  <span class="keyword">const</span> backTop = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#backTop&#x27;</span>)</span><br><span class="line">  backTop.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// document.documentElement.scrollTop = 0</span></span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">scrollTo</span>(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二模块 第三模块</span></span><br><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 2.点击页面滑动</span></span><br><span class="line">  <span class="keyword">const</span> list = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.xtx-elevator-list&#x27;</span>)</span><br><span class="line">  list.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">11</span>)</span><br><span class="line">    <span class="comment">// 判断是a标签还必须是自定义属性</span></span><br><span class="line">    <span class="keyword">if</span> (e.<span class="property">target</span>.<span class="property">tagName</span> === <span class="string">&#x27;A&#x27;</span> &amp;&amp; e.<span class="property">target</span>.<span class="property">dataset</span>.<span class="property">name</span>) &#123;</span><br><span class="line">      <span class="comment">// 获取active这个类名的对象 赋值</span></span><br><span class="line">      <span class="keyword">const</span> old = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.xtx-elevator-list .active&#x27;</span>)</span><br><span class="line">      <span class="comment">// console.log(old)  // null </span></span><br><span class="line">      <span class="comment">// 判断 如果有active这个类就移除没有就不删除返回null</span></span><br><span class="line">      <span class="keyword">if</span> (old) old.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">      <span class="comment">// 当前元素添加active(高亮)</span></span><br><span class="line">      e.<span class="property">target</span>.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">      <span class="comment">// 获得自定义属性 new topic</span></span><br><span class="line">      <span class="comment">// console.log(e.target.dataset.name)</span></span><br><span class="line">      <span class="comment">// 根据小盒子的自定义属性值去选择对应的大盒子</span></span><br><span class="line">      <span class="comment">// console.log(document.querySelector(`.xtx_goods_$&#123;e.target.dataset.name&#125;`).offsetTop)</span></span><br><span class="line">      <span class="comment">// 获得对应大盒子的offsetTop</span></span><br><span class="line">      <span class="keyword">const</span> top = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.xtx_goods_<span class="subst">$&#123;e.target.dataset.name&#125;</span>`</span>).<span class="property">offsetTop</span> - <span class="number">100</span></span><br><span class="line">      <span class="comment">// 让页面滚动到对应的位置</span></span><br><span class="line">      <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span> = top</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">//3.页面滚动事件，可以根据大盒子添加小盒子</span></span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 3.1先移除类</span></span><br><span class="line">    <span class="comment">// 获取active这个类名的对象 赋值</span></span><br><span class="line">    <span class="keyword">const</span> old = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.xtx-elevator-list .active&#x27;</span>)</span><br><span class="line">    <span class="comment">// console.log(old)  // null </span></span><br><span class="line">    <span class="comment">// 判断 如果有active这个类就移除没有就不删除返回null</span></span><br><span class="line">    <span class="keyword">if</span> (old) old.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    <span class="comment">// 3.2 判断页面当前滑动的位置，选择小盒子</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取四个大盒子</span></span><br><span class="line">    <span class="keyword">const</span> news = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.xtx_goods_new&#x27;</span>)</span><br><span class="line">    <span class="keyword">const</span> popular = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.xtx_goods_popular&#x27;</span>)</span><br><span class="line">    <span class="keyword">const</span> brand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.xtx_goods_brand&#x27;</span>)</span><br><span class="line">    <span class="keyword">const</span> topic = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.xtx_goods_topic&#x27;</span>)</span><br><span class="line">    <span class="comment">// html的位置</span></span><br><span class="line">    <span class="keyword">const</span> n = <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span></span><br><span class="line">    <span class="keyword">if</span> (n &gt;= news.<span class="property">offsetTop</span> &amp;&amp; n &lt; popular.<span class="property">offsetTop</span>) &#123;</span><br><span class="line">      <span class="comment">// [data-name=new] 属性选择器</span></span><br><span class="line">      <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;[data-name=new]&#x27;</span>).<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt;= popular.<span class="property">offsetTop</span> &amp;&amp; n &lt; brand.<span class="property">offsetTop</span>) &#123;</span><br><span class="line">      <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;[data-name=popular]&#x27;</span>).<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt;= brand.<span class="property">offsetTop</span> &amp;&amp; n &lt; topic.<span class="property">offsetTop</span>) &#123;</span><br><span class="line">      <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;[data-name=brand]&#x27;</span>).<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt;= topic.<span class="property">offsetTop</span>) &#123;</span><br><span class="line">      <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;[data-name=topic]&#x27;</span>).<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<h6 id="tab栏切换"><a href="#tab栏切换" class="headerlink" title="tab栏切换"></a>tab栏切换</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 1.给5个链接绑定鼠标经过事件</span></span><br><span class="line">    <span class="comment">// 1.1 获取a元素</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">as</span> = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.tab-nav a&#x27;</span>)</span><br><span class="line">    <span class="comment">// console.log(as)</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">as</span>.<span class="property">length</span>; i++) &#123;</span><br><span class="line">      <span class="comment">// console.log(as[i])</span></span><br><span class="line">      <span class="keyword">as</span>[i].<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseenter&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="comment">// console.log(&#x27;鼠标经过&#x27;)</span></span><br><span class="line">        <span class="comment">// 排他思想 移除类 添加类</span></span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.tab-nav .active&#x27;</span>).<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">        <span class="comment">// 添加类  this 当前的a</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 下面五个大盒子 .item</span></span><br><span class="line">        <span class="comment">// 移除类</span></span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.tab-content .active&#x27;</span>).<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">        <span class="comment">// 对应序号item 显示  添加acitve类</span></span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.tab-content .item:nth-child(<span class="subst">$&#123;i + <span class="number">1</span>&#125;</span>)`</span>).<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2022/11/06/%E5%88%9D%E8%AF%86-%E4%B8%89/" title="初识(三)" target="_blank" rel="external">http://example.com/2022/11/06/初识-三/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/portrait.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">十七</span><small class="ml-1x">前端开发工程师</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E5%9B%9B/" title="初识(四)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/11/06/%E5%88%9D%E8%AF%86-%E4%BA%8C-JS/" title="初识(二)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/zhifubao.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/weixin.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
